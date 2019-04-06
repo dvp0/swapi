@@ -46,7 +46,7 @@
     "webpack": "./node_modules/.bin/webpack --mode=none -w",
     "webpack-prod": "./node_modules/.bin/webpack --mode=production",
     "surge": "cd public && ../node_modules/surge/lib/cli.js",
-    "deploy-surge": "npm run webpack-prod && npm run surge",
+    "deploy-surge": "npm run webpack-prod && npm run surge"
   },
   "author": "Dev",
   "license": "ISC"
