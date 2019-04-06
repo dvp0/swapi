@@ -4,7 +4,9 @@ const port = process.env.PORT || 7001;
 const path = require('path');
 const getMoviePoster = require("movie-art");
 const gis = require('g-i-s');
+const compression = require('compression')
 
+app.use(compression());
 app.use(express.static(path.join(__dirname, '/public/')));
 
 // following apis are routed through express so we don't have to deal with no-cors
