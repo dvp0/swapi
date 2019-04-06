@@ -1,8 +1,6 @@
 var path = require('path');
 var BUILD_DIR = path.resolve(__dirname, './public');
 var APP_DIR = path.resolve(__dirname, './src');
-var OpenBrowserPlugin = require('open-browser-webpack-plugin');
-var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const config = {
   entry: {
@@ -51,12 +49,8 @@ const config = {
           }
         }]
       }
-    ],
-  },
-  plugins: [
-    new BundleAnalyzerPlugin(),
-    new OpenBrowserPlugin({ url: 'http://localhost:' + process.env.PORT || 7001 })
-  ]
+    ]
+  }
 };
 
 module.exports = config;
