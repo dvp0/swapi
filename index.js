@@ -24,7 +24,7 @@ app.get('/poster', (req, res) => {
 app.get('/character_thumbnail', (req, res) => {
 	gis(req.query.name, (e, r) => res.json({
 		value: r ?
-			r.find(i => i.width < 300).url :
+			r.find(i => i.width < 600).url :
 			"https://upload.wikimedia.org/wikipedia/en/thumb/5/5c/C-3PO_droid.png/220px-C-3PO_droid.png"
 	}));
 });
