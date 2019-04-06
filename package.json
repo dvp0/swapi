@@ -41,13 +41,13 @@
     "webpack-cli": "^3.3.0"
   },
   "scripts": {
-    "start": "npm install && npm run webpack-prod",
-    "start-dev": "npm run webpack & nodemon src/server/index.js",
+    "build": "npm install && npm run webpack-prod",
+    "start": "npm run webpack & nodemon src/server/index.js",
     "webpack": "./node_modules/.bin/webpack --mode=none -w",
     "webpack-prod": "./node_modules/.bin/webpack --mode=production",
     "surge": "cd public && ../node_modules/surge/lib/cli.js",
     "deploy-surge": "npm run webpack-prod && npm run surge",
-    "lint": "./node_modules/.bin/eslint src/ --fix"
+    "lint": "./node_modules/.bin/eslint src/ --fix",
   },
   "author": "Dev",
   "license": "ISC"
