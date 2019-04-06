@@ -25305,8 +25305,8 @@ function useFetch(url) {
       return _getData.apply(this, arguments);
     }
 
-    getData();
-  }, [cachedResult, url]);
+    getData(); //eslint-disable-next-line
+  }, [cachedResult, url].concat(deps));
   return {
     data: data,
     loading: loading
@@ -26359,6 +26359,7 @@ var _styles = _babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_0___d
     $nest: {
       "h1": {
         fontSize: "4em",
+        marginTop: "0px",
         color: utils_values__WEBPACK_IMPORTED_MODULE_2__["colors"].white
       },
       "h4": {
@@ -26369,7 +26370,7 @@ var _styles = _babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_0___d
     }
   },
   image: {
-    width: "20%",
+    width: "16%",
     marginRight: "5%"
   },
   characters: {
@@ -26411,14 +26412,14 @@ var _styles = _babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_0___d
   sortWrapper: {
     background: utils_values__WEBPACK_IMPORTED_MODULE_2__["colors"].dark,
     borderRadius: "3px",
-    cursor: "pointer",
     display: "inline-flex",
     overflow: "hidden",
     margin: "0 5px 5px",
     height: "fit-content"
   },
   allSorts: {
-    display: "inline-flex"
+    display: "inline-flex",
+    cursor: "pointer"
   },
   arrow: {
     padding: "3px"
@@ -26485,10 +26486,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Image", function() { return Image; });
 /* harmony import */ var _babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(380);
 /* harmony import */ var _babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var typestyle__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(344);
-/* harmony import */ var hooks_fetch__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(374);
-/* harmony import */ var utils_api__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(382);
-/* harmony import */ var utils_values__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(366);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(333);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var typestyle__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(344);
+/* harmony import */ var hooks_fetch__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(374);
+/* harmony import */ var utils_api__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(382);
+/* harmony import */ var utils_values__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(366);
+
 
  // helpers
 
@@ -26503,8 +26507,8 @@ var _styles = _babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_0___d
       display: "flex",
       justifyContent: "center",
       flexDirection: "column",
-      color: utils_values__WEBPACK_IMPORTED_MODULE_4__["colors"].gray,
-      background: utils_values__WEBPACK_IMPORTED_MODULE_4__["colors"].dark
+      color: utils_values__WEBPACK_IMPORTED_MODULE_5__["colors"].gray,
+      background: utils_values__WEBPACK_IMPORTED_MODULE_5__["colors"].dark
     };
 
     if (!isCharacter) {
@@ -26513,9 +26517,9 @@ var _styles = _babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_0___d
       });
     }
 
-    return Object(typestyle__WEBPACK_IMPORTED_MODULE_1__["style"])(_s);
+    return Object(typestyle__WEBPACK_IMPORTED_MODULE_2__["style"])(_s);
   }
-}, Object(typestyle__WEBPACK_IMPORTED_MODULE_1__["stylesheet"])({
+}, Object(typestyle__WEBPACK_IMPORTED_MODULE_2__["stylesheet"])({
   image: {
     height: "inherit",
     width: "100%",
@@ -26535,7 +26539,7 @@ function Image(_ref) {
       isCharacter = _ref.isCharacter;
 
   // lazy loading images
-  var _url = isCharacter ? utils_api__WEBPACK_IMPORTED_MODULE_3__["api"].character(text) : utils_api__WEBPACK_IMPORTED_MODULE_3__["api"].poster(text);
+  var _url = isCharacter ? utils_api__WEBPACK_IMPORTED_MODULE_4__["api"].character(text) : utils_api__WEBPACK_IMPORTED_MODULE_4__["api"].poster(text);
 
   var _isSurged = window.location.host.indexOf("surge.sh") > -1;
 
@@ -26543,19 +26547,19 @@ function Image(_ref) {
 
   var _className = isCharacter ? _styles.thumb : _styles.image;
 
-  var _useFetch = Object(hooks_fetch__WEBPACK_IMPORTED_MODULE_2__["useFetch"])(_url, [text]),
+  var _useFetch = Object(hooks_fetch__WEBPACK_IMPORTED_MODULE_3__["useFetch"])(_url, [text]),
       data = _useFetch.data,
       loading = _useFetch.loading;
 
   if (!loading && data && !_isSurged) {
-    return React.createElement("img", {
+    return react__WEBPACK_IMPORTED_MODULE_1__["createElement"]("img", {
       src: data.value,
       className: _className
     });
   }
 
-  return React.createElement("div", {
-    className: Object(typestyle__WEBPACK_IMPORTED_MODULE_1__["classes"])(_className, _styles.placeholder(isCharacter))
+  return react__WEBPACK_IMPORTED_MODULE_1__["createElement"]("div", {
+    className: Object(typestyle__WEBPACK_IMPORTED_MODULE_2__["classes"])(_className, _styles.placeholder(isCharacter))
   }, _placeholder);
 }
 

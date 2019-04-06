@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { cacheResult, getCachedResult, fetchAndCacheResult } from "utils/cache";
+import { fetchAndCacheResult } from "utils/cache";
 
 function getUniqueHomes(characters) {
   return characters.reduce((aggr, character) => {

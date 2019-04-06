@@ -40,6 +40,7 @@ export const _styles = {
       $nest: {
         "h1": {
           fontSize: "4em",
+          marginTop: "0px",
           color: colors.white,
         },
         "h4": {
@@ -50,7 +51,7 @@ export const _styles = {
       }
     },
     image: {
-      width: "20%",
+      width: "16%",
       marginRight: "5%",
     },
     characters: {
@@ -92,7 +93,6 @@ export const _styles = {
     sortWrapper: {
       background: colors.dark,
       borderRadius: "3px",
-      cursor: "pointer",
       display: "inline-flex",
       overflow: "hidden",
       margin: "0 5px 5px",
@@ -100,6 +100,7 @@ export const _styles = {
     },
     allSorts: {
       display: "inline-flex",
+      cursor: "pointer",
     },
     arrow: {
       padding: "3px",

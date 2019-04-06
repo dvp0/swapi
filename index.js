@@ -7,6 +7,9 @@ const gis = require('g-i-s');
 
 app.use(express.static(path.join(__dirname, '/public/')));
 
+// following apis are routed through express so we don't have to deal with no-cors
+// headers issue directly from browser
+// omdb search for movie posters
 app.get('/poster', (req, res) => {
 	getMoviePoster(req.query.title)
 		.then(r => res.json({

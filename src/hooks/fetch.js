@@ -42,7 +42,8 @@ export function useFetch(url, deps = []) {
 
     getData();
 
-  }, [cachedResult, url]);
+    //eslint-disable-next-line
+  }, [cachedResult, url].concat(deps));
 
   return {
     data,
