@@ -1,20 +1,19 @@
 import { EXPIRE_IN_SECONDS } from "utils/values";
+import Fifo from "localstorage-fifo";
+const swapiCache = new Fifo({ namespace: 'tasks' });
 
-// Simple local caching system 
+// Simple local storage caching system
 export function getCachedResult(url) {
-  return (window.swapiCache || {})[encodeURI(url)];
+  return swapiCache.get(encodeURI(url));
 }
 
 export function cacheResult(url, data) {
 
-  window.swapiCache = {
-    ...window.swapiCache || {},
-    [encodeURI(url)]: {
-      expiresAt: Date.now() + (EXPIRE_IN_SECONDS * 1000),
-      data: data
-    },
+  const _json = {
+    expiresAt: Date.now() + (EXPIRE_IN_SECONDS * 1000),
+    data: data
   };
-
+  swapiCache.set(encodeURI(url), _json);
 }
 
 export function fetchAndCacheResult(url) {

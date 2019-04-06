@@ -53,11 +53,12 @@ function CharacterList({ characters }) {
     <>
 			<div className={_styles.charactersTitle}>
 				<h3>Characters</h3>
-				<Sortable active={sort} onChange={setSort} onDirectionChange={setDirection} direction={direction}/>
-			</div> <
-    div className = { _styles.characters } > { _characters.map((c, i) => <Character key={i} character={c} />) }
-    </div> <
-    />
+				<Sortable active={sort} onChange={setSort} onDirectionChange={setDirection} direction={direction} />
+			</div>
+			<div className = { _styles.characters } >
+				{_characters.map((c, i) => <Character key={i} character={c} />)}
+			</div>
+		</>
   );
 }
 
@@ -82,9 +83,7 @@ export function Film({ filmId }) {
 							</div>
 							<div className={_styles.content}>
 								<h1>{data.title}</h1>
-								<h4>Episode {data.episode_id}</h4>
-								<h4>Release on {data.release_date}</h4>
-								<h4>Directed by {data.director}</h4>
+								<h4>Episode {data.episode_id} | Release on {data.release_date} | Directed by {data.director}</h4>
 							</div>
 						</div>
 						<CharacterList characters={charsData} />

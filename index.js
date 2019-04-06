@@ -1,10 +1,11 @@
 const express = require('express');
 const app = express();
-const port = process.env.PORT || 7001;
+const port = process.env.PORT || 1138;
 const path = require('path');
 const getMoviePoster = require("movie-art");
 const gis = require('g-i-s');
-const compression = require('compression')
+const compression = require('compression');
+const favicon = require('serve-favicon');
 
 app.use(compression());
 app.use(express.static(path.join(__dirname, '/public/')));
@@ -30,6 +31,7 @@ app.get('/character_thumbnail', (req, res) => {
 });
 
 app.use('/', (req, res) => {
+	app.use(favicon(path.join(__dirname, 'public', `favicon-${Math.floor(Math.random() * 9)}.ico`)));
 	res.sendFile(path.join(__dirname + '/public/index.html'));
 });
 
