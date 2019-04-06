@@ -41,12 +41,13 @@
   "scripts": {
     "lint": "./node_modules/.bin/eslint src/ --fix",
     "heroku-prebuild": "npm install --dev",
-    "build": "npm install && npm run webpack-prod && npm run nodemon",
-    "start": "npm run webpack & npm run nodemon",
+    "build": "npm install && npm run webpack-prod && node index.js",
+    "start": "node index.js",
+    "start-dev": "npm run webpack & npm run nodemon",
     "nodemon": "nodemon src/server/index.js",
     "webpack": "./node_modules/.bin/webpack --mode=none -w",
     "webpack-prod": "./node_modules/.bin/webpack --mode=production",
-    "surge": "cd public && ../node_modules/surge/lib/cli.js",
+    "surge": "cd public && cp ./public/index.html ./public/200.html && ../node_modules/surge/lib/cli.js",
     "deploy-surge": "npm run webpack-prod && npm run surge"
   },
   "author": "Dev",
