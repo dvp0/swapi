@@ -2,7 +2,7 @@ var webpack = require('webpack');
 var path = require('path');
 
 var BUILD_DIR = path.resolve(__dirname, './public');
-var APP_DIR = path.resolve(__dirname, './src/');
+var APP_DIR = path.resolve(__dirname, './src');
 
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -12,17 +12,17 @@ const config = {
   },
   devtool: "source-map",
   output: {
-    filename: 'c/bundle.js',
+    filename: 'bundle.js',
     path: BUILD_DIR,
   },
   resolve: {
     extensions: [".js",".jsx"],
     alias: {
-      'components': APP_DIR + 'components'),
-      'utils': APP_DIR + 'utils'),
-      'styles': APP_DIR + 'styles'),
-      'hooks': APP_DIR + 'hooks'),
-      'widgets': APP_DIR + 'widgets'),
+      'components': APP_DIR + '/components',
+      'utils': APP_DIR + '/utils',
+      'styles': APP_DIR + '/styles',
+      'hooks': APP_DIR + '/hooks',
+      'widgets': APP_DIR + '/widgets',
     }
   },
   module: {

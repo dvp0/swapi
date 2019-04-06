@@ -2,13 +2,11 @@
 
 Express - Node Http server
 
-Webpack - Asset bundler,
+Webpack - Asset bundler
 
 React - Front End UI library,
 
 Babel - Transpiler to use fancy ES6 tricks in browser
-
-TypeScript - Type checking for javascript (Used for one file for example)
 
 Typestyle - Powerful and type checked css implementation in JS
 

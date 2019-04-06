@@ -1,9 +1,6 @@
 import * as React from "react";
 import { stylesheet } from "typestyle";
 
-// helpers
-import { useFetch } from "hooks/fetch";
-
 // static values
 import { api } from "utils/api";
 

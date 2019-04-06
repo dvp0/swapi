@@ -1,6 +1,5 @@
 import * as React from "react";
-import { classes } from "typestyle";
-import { navigate } from "@reach/router";
+import _sortBy from "lodash.sortby";
 
 import { useFetch } from "hooks/fetch";
 import { useCharactersFetch } from "hooks/characters";
@@ -8,59 +7,53 @@ import { api } from "utils/api";
 import { _styles } from "styles/film";
 import { Loading } from "widgets/plasma";
 import { Image } from "widgets/image";
+import { BackButton } from "components/back";
 
 const { useState } = React;
-
-function GoBack() {
-	return (
-		<div 
-			className={classes(_styles.left, _styles.goBack)}
-			onClick={() => navigate(api.homePage)}
-		>
-			Go Back
-		</div>
-	);
-}
-
 
 function Character({ character }) {
 	return (
 		<div className={_styles.character}>
 			<Image isCharacter text={character.name} />
 			<h4>{character.name}</h4>
-			<h5>{character.mass}</h5>
-			<h5>{character.height}</h5>
-			<h5>{character.homeworld}</h5>
+			<h5>mass: {character.mass}</h5>
+			<h5>height:{character.height}</h5>
+			<h5>home: {character.homeworld}</h5>
 		</div>
 	)
 }
 
-function Sortable() {
+function Sortable({active, onChange, direction, onDirectionChange}) {
+	const options = ["name", "mass", "homeworld", "height"];
+	const _onDirectionChange = () => direction === "asc" ? onDirectionChange("desc") : onDirectionChange("asc");
 
+	return (
+		<div className={_styles.allSorts}>
+			<div className={_styles.sortWrapper}>
+				{options.map((o, i) =>
+					<div key={i} onClick={() => onChange(o)} className={_styles.sort(active === o)}>{o}</div>
+				)}
+			</div>
+			<div onClick={_onDirectionChange} className={_styles.arrow}>
+				{direction === "asc" && "↑"}
+				{direction === "desc" && "↓"}
+			</div>
+		</div>
+	);
 }
 
 function CharacterList({ characters }) {
 
-	const { sortV, setSortV } = useState("name");
-
-	const _characters = characters.sort((a, b) => {
-	  var valueA = a[sortV].toUpperCase();
-	  var valueB = b[sortV].toUpperCase();
-	  
-	  if (valueA < valueB) {
-	    return -1;
-	  } else if (valueA > valueB) {
-	    return 1;
-	  } else {
-	  	return 0;
-	  }
-	});
+	const [sort, setSort] = useState("name");
+	const [direction, setDirection] = useState("asc");
+	const _sortedChars = _sortBy(characters, o => o[sort]);
+	const _characters = direction === "desc" ? _sortedChars.reverse() : _sortedChars;
 
 	return (
 		<>
-			<div>
-				<h1>Characters</h1>
-				{sort}
+			<div className={_styles.charactersTitle}>
+				<h3>Characters</h3>
+				<Sortable active={sort} onChange={setSort} onDirectionChange={setDirection} direction={direction}/>
 			</div>
 			<div className={_styles.characters}>
 				{_characters.map((c, i) => <Character key={i} character={c} />)}
@@ -68,7 +61,6 @@ function CharacterList({ characters }) {
 		</>
 	);
 }
-
 
 export function Film({ filmId }) {
 
@@ -80,7 +72,9 @@ export function Film({ filmId }) {
 			<Loading condition={loading || charsLoading} />
 			{data && charsData &&
 				<>
-					<GoBack />
+					<div className={_styles.left}>
+						<BackButton />
+					</div>
 					<div className={_styles.right}>
 						<div className={_styles.contentWrapper}>
 							<div className={_styles.image}>
@@ -99,4 +93,4 @@ export function Film({ filmId }) {
 			}
 		</div>
 	);
-};
+}

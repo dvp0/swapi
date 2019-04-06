@@ -26,7 +26,7 @@ export const _styles = stylesheet({
 				zIndex: 1,
 				transform: "scale(1.2)",
 				background: colors.gray,
-				boxShadow: `1px 1px 20px 5px ${colors.black}`,
+				boxShadow: `1px 1px 20px 5px ${colors.dark}`,
 				$nest: {
 					"h6": {
 						opacity: 0.7,

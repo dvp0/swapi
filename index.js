@@ -3,21 +3,24 @@ const app = express();
 const port = 7001;
 const path = require('path');
 const getMoviePoster = require("movie-art");
-const fetch = require("node-fetch");
 const gis = require('g-i-s');
 
-app.use(express.static(path.join(__dirname, '/public/c/')));
+app.use(express.static(path.join(__dirname, '/public/')));
 
 app.get('/poster', (req, res) => {
 	getMoviePoster(req.query.title)
 		.then(r => res.json({
-			value: r
+			value: r || ("https://imgix.ranker.com/user_node_img/50076/1001511915/original/t" +
+				"he-very-first-_star-war_-poster-photo-u1?w=650&q=50&fm=pjpg&fit=crop&crop=faces")
 		}));
 });
 
+// google image search api, if fails always sends a 3PO image
 app.get('/character_thumbnail', (req, res) => {
 	gis(req.query.name, (e, r) => res.json({
-		value: r.find(i => i.width < 300).url
+		value: r
+			? r.find(i => i.width < 300).url
+			: "https://upload.wikimedia.org/wikipedia/en/thumb/5/5c/C-3PO_droid.png/220px-C-3PO_droid.png"
 	}));
 });
 

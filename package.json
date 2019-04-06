@@ -1,5 +1,5 @@
 {
-  "name": "scaffold",
+  "name": "swapi",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -17,27 +17,33 @@
     "babel-preset-react": "^6.24.1",
     "express": "^4.16.4",
     "g-i-s": "^2.1.3",
-    "jquery": "^3.3.1",
+    "lodash.sortby": "^4.7.0",
     "movie-art": "^2.0.3",
-    "node-fetch": "^2.3.0",
     "react": "^16.8.0",
     "react-dom": "^16.8.0",
     "typestyle": "^2.0.1"
   },
   "devDependencies": {
-    "nodemon": "^1.18.10",
     "css-loader": "^2.1.1",
+    "eslint": "^5.16.0",
+    "eslint-loader": "^2.1.2",
+    "eslint-plugin-react": "^7.12.4",
+    "eslint-plugin-react-hooks": "^1.6.0",
     "html-webpack-plugin": "^3.2.0",
     "node-sass": "^4.11.0",
+    "nodemon": "^1.18.10",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
-    "ts-loader": "^5.3.3",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0"
   },
   "scripts": {
     "start": "npm run webpack & nodemon src/server/index.js",
-    "webpack": "./node_modules/.bin/webpack --mode=none -w"
+    "webpack": "./node_modules/.bin/webpack --mode=none -w",
+    "webpack-prod": "./node_modules/.bin/webpack --mode=production",
+    "surge": "cd public && ../node_modules/surge/lib/cli.js",
+    "deploy": "npm run webpack-prod && npm run surge",
+    "lint": "./node_modules/.bin/eslint src/ --fix"
   },
   "author": "Dev",
   "license": "ISC"

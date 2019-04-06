@@ -9,7 +9,7 @@ import {
 
 // Custom React Hook for fetching mechanism
 
-export function useFetch(url) {
+export function useFetch(url, deps = []) {
 
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -31,7 +31,7 @@ export function useFetch(url) {
         setData(data);
         setLoading(false);
       }
-    };
+    }
 
     // In newer 16.X.X versions, react enforces this way of declaring async methods 
     // within useEffect and calling it right away rather than directly returning
@@ -42,10 +42,10 @@ export function useFetch(url) {
 
     getData();
 
-  }, []);
+  }, [cachedResult, url]);
 
   return {
     data,
     loading
   };
-};
+}

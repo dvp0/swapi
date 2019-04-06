@@ -2,7 +2,9 @@ export const EXPIRE_IN_SECONDS = 300;
 
 export const colors = {
 	charcoal: "#121517",
-	black: "#000",
+	dark: "#000000",
 	gray: "#262b2f",
-	white: "#fff",
+	pale: "#D5D5D5",
+	white: "#FFFFFF",
+	transparent: "transparent",
 };

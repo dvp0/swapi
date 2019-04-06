@@ -2,8 +2,6 @@ import * as React from "react";
 import { cssRaw, stylesheet } from "typestyle";
 import { colors } from "utils/values";
 
-const { useEffect, useRef } = React;
-
 // pure css implementation of lightsaber gif
 // this block is taken from https://codepen.io/ncerminara/pen/KzurJ?editors=1100
 // and modified to be animated
@@ -331,7 +329,7 @@ const _styles = stylesheet({
 		height: "100vh",
 		width: "100%",
 		position: "fixed",
-		background: colors.black,
+		background: colors.dark,
 		display: "flex",
 		alignItems: "center",
 		justifyContent: "center",

@@ -19,7 +19,7 @@ export function useCharactersFetch(urls = []) {
 
     async function getCharactersAndHomes() {
 
-      if (!!urls.length) {
+      if (urls.length) {
 
         setCharsLoading(true);
 
@@ -43,7 +43,7 @@ export function useCharactersFetch(urls = []) {
         setCharsLoading(false);
       }
 
-    };
+    }
 
     getCharactersAndHomes();
 
@@ -53,4 +53,4 @@ export function useCharactersFetch(urls = []) {
     charsData,
     charsLoading,
   };
-};
+}

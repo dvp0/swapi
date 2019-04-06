@@ -2,7 +2,7 @@ import * as React from "react";
 import { stylesheet } from "typestyle";
 
 // helpers
-import { useSingleFetch } from "hooks/fetch";
+import { useFetch } from "hooks/fetch";
 import { navigate } from "@reach/router";
 
 // static values
@@ -32,7 +32,7 @@ function Movie({ movie }) {
 
 export function Home() {
 
-	const { data, loading } = useSingleFetch(api.films);
+	const { data, loading } = useFetch(api.films);
 
 	return (
 		<div className={_styles.wrapper}>

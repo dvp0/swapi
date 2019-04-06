@@ -2,7 +2,6 @@
 // js modules
 import 'babel-polyfill';
 import * as React from 'react';
-import $ from 'jquery';
 import { render } from 'react-dom';
 import { cssRule } from "typestyle";
 import { Router, Link, createHistory } from "@reach/router";
