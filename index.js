@@ -21,14 +21,14 @@ app.get('/poster', (req, res) => {
 // google image search api, if fails always sends a 3PO image
 app.get('/character_thumbnail', (req, res) => {
 	gis(req.query.name, (e, r) => res.json({
-		value: r
-			? r.find(i => i.width < 300).url
-			: "https://upload.wikimedia.org/wikipedia/en/thumb/5/5c/C-3PO_droid.png/220px-C-3PO_droid.png"
+		value: r ?
+			r.find(i => i.width < 300).url :
+			"https://upload.wikimedia.org/wikipedia/en/thumb/5/5c/C-3PO_droid.png/220px-C-3PO_droid.png"
 	}));
 });
 
-app.use('/', (req,res) =>{
-    res.sendFile(path.join(__dirname+'/public/index.html'));
+app.use('/', (req, res) => {
+	res.sendFile(path.join(__dirname + '/public/index.html'));
 });
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+app.listen(port, () => console.log(`FALCON has landed on port ${port}!`));

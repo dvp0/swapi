@@ -1,10 +1,7 @@
-var webpack = require('webpack');
 var path = require('path');
-
 var BUILD_DIR = path.resolve(__dirname, './public');
 var APP_DIR = path.resolve(__dirname, './src');
-
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+var OpenBrowserPlugin = require('open-browser-webpack-plugin');
 
 const config = {
   entry: {
@@ -55,6 +52,9 @@ const config = {
       }
     ],
   },
+  plugins: [
+    new OpenBrowserPlugin({ url: 'http://localhost:7001' })
+  ]
 };
 
 module.exports = config;

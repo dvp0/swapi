@@ -12,23 +12,23 @@ import { BackButton } from "components/back";
 const { useState } = React;
 
 function Character({ character }) {
-	return (
-		<div className={_styles.character}>
+  return (
+    <div className={_styles.character}>
 			<Image isCharacter text={character.name} />
 			<h4>{character.name}</h4>
 			<h5>mass: {character.mass}</h5>
 			<h5>height:{character.height}</h5>
 			<h5>home: {character.homeworld}</h5>
 		</div>
-	)
+  )
 }
 
-function Sortable({active, onChange, direction, onDirectionChange}) {
-	const options = ["name", "mass", "homeworld", "height"];
-	const _onDirectionChange = () => direction === "asc" ? onDirectionChange("desc") : onDirectionChange("asc");
+function Sortable({ active, onChange, direction, onDirectionChange }) {
+  const options = ["name", "mass", "homeworld", "height"];
+  const _onDirectionChange = () => direction === "asc" ? onDirectionChange("desc") : onDirectionChange("asc");
 
-	return (
-		<div className={_styles.allSorts}>
+  return (
+    <div className={_styles.allSorts}>
 			<div className={_styles.sortWrapper}>
 				{options.map((o, i) =>
 					<div key={i} onClick={() => onChange(o)} className={_styles.sort(active === o)}>{o}</div>
@@ -39,36 +39,36 @@ function Sortable({active, onChange, direction, onDirectionChange}) {
 				{direction === "desc" && "↓"}
 			</div>
 		</div>
-	);
+  );
 }
 
 function CharacterList({ characters }) {
 
-	const [sort, setSort] = useState("name");
-	const [direction, setDirection] = useState("asc");
-	const _sortedChars = _sortBy(characters, o => o[sort]);
-	const _characters = direction === "desc" ? _sortedChars.reverse() : _sortedChars;
+  const [sort, setSort] = useState("name");
+  const [direction, setDirection] = useState("asc");
+  const _sortedChars = _sortBy(characters, o => o[sort]);
+  const _characters = direction === "desc" ? _sortedChars.reverse() : _sortedChars;
 
-	return (
-		<>
+  return (
+    <>
 			<div className={_styles.charactersTitle}>
 				<h3>Characters</h3>
 				<Sortable active={sort} onChange={setSort} onDirectionChange={setDirection} direction={direction}/>
-			</div>
-			<div className={_styles.characters}>
-				{_characters.map((c, i) => <Character key={i} character={c} />)}
-			</div>
-		</>
-	);
+			</div> <
+    div className = { _styles.characters } > { _characters.map((c, i) => <Character key={i} character={c} />) }
+    </div> <
+    />
+  );
 }
 
 export function Film({ filmId }) {
 
-	const { data, loading } = useFetch(api.film(filmId));
-	const { charsData, charsLoading } = useCharactersFetch((data || {}).characters);
+  const { data, loading } = useFetch(api.film(filmId));
+  const { charsData, charsLoading } = useCharactersFetch((data || {})
+    .characters);
 
-	return (
-		<div className={_styles.wrapper}>
+  return (
+    <div className={_styles.wrapper}>
 			<Loading condition={loading || charsLoading} />
 			{data && charsData &&
 				<>
@@ -92,5 +92,5 @@ export function Film({ filmId }) {
 				</>
 			}
 		</div>
-	);
+  );
 }

@@ -1,5 +1,5 @@
-import {style, stylesheet} from "typestyle";
-import {colors} from "utils/values";
+import { style, stylesheet } from "typestyle";
+import { colors } from "utils/values";
 
 export const _styles = {
   sort: (isActive) => style({

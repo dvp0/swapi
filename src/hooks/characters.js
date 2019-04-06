@@ -33,7 +33,8 @@ export function useCharactersFetch(urls = []) {
         _charsResults.forEach(character => {
           finalResults.push({
             name: character.name,
-            homeworld: _homesResults.find(h => h.url === character.homeworld).name,
+            homeworld: _homesResults.find(h => h.url === character.homeworld)
+              .name,
             mass: character.mass,
             height: character.height,
           });

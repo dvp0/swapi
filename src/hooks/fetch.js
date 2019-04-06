@@ -1,11 +1,5 @@
-import {
-  useState,
-  useEffect
-} from "react";
-import {
-  cacheResult,
-  getCachedResult
-} from "utils/cache";
+import { useState, useEffect } from "react";
+import { cacheResult, getCachedResult } from "utils/cache";
 
 // Custom React Hook for fetching mechanism
 
