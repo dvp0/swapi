@@ -40,6 +40,7 @@
   },
   "scripts": {
     "lint": "./node_modules/.bin/eslint src/ --fix",
+    "heroku-prebuild": "npm install --dev",
     "build": "npm install && npm run webpack-prod && npm run nodemon",
     "start": "npm run webpack & npm run nodemon",
     "nodemon": "nodemon src/server/index.js",
