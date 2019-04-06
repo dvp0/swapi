@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const port = 7001;
+const port = process.env.PORT || 7001;
 const path = require('path');
 const getMoviePoster = require("movie-art");
 const gis = require('g-i-s');

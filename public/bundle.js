@@ -22246,7 +22246,13 @@ function Character(_ref) {
   }, react__WEBPACK_IMPORTED_MODULE_1__["createElement"](widgets_image__WEBPACK_IMPORTED_MODULE_8__["Image"], {
     isCharacter: true,
     text: character.name
-  }), react__WEBPACK_IMPORTED_MODULE_1__["createElement"]("h4", null, character.name), react__WEBPACK_IMPORTED_MODULE_1__["createElement"]("h5", null, "mass: ", character.mass), react__WEBPACK_IMPORTED_MODULE_1__["createElement"]("h5", null, "height:", character.height), react__WEBPACK_IMPORTED_MODULE_1__["createElement"]("h5", null, "home: ", character.homeworld));
+  }), react__WEBPACK_IMPORTED_MODULE_1__["createElement"]("h4", null, character.name), react__WEBPACK_IMPORTED_MODULE_1__["createElement"]("h5", {
+    title: "Mass"
+  }, "(M) ", character.mass), react__WEBPACK_IMPORTED_MODULE_1__["createElement"]("h5", {
+    title: "Height"
+  }, "(H) ", character.height), react__WEBPACK_IMPORTED_MODULE_1__["createElement"]("h5", {
+    title: "Home world"
+  }, "\u2302 ", character.homeworld));
 }
 
 function Sortable(_ref2) {
@@ -26700,16 +26706,19 @@ function Home() {
       data = _useFetch.data,
       loading = _useFetch.loading;
 
-  return react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", {
-    className: styles_home__WEBPACK_IMPORTED_MODULE_6__["_styles"].wrapper
-  }, react__WEBPACK_IMPORTED_MODULE_0__["createElement"](widgets_plasma__WEBPACK_IMPORTED_MODULE_4__["Loading"], {
+  return react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", null, react__WEBPACK_IMPORTED_MODULE_0__["createElement"](widgets_plasma__WEBPACK_IMPORTED_MODULE_4__["Loading"], {
     condition: loading
-  }), data && data.results.map(function (each, index) {
+  }), data && react__WEBPACK_IMPORTED_MODULE_0__["createElement"](react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("img", {
+    src: "/starwars.png",
+    className: styles_home__WEBPACK_IMPORTED_MODULE_6__["_styles"].logo
+  }), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", {
+    className: styles_home__WEBPACK_IMPORTED_MODULE_6__["_styles"].wrapper
+  }, data.results.map(function (each, index) {
     return react__WEBPACK_IMPORTED_MODULE_0__["createElement"](Movie, {
       key: index,
       movie: each
     });
-  }));
+  }))));
 }
 
 /***/ }),
@@ -26726,7 +26735,7 @@ __webpack_require__.r(__webpack_exports__);
 var _styles = Object(typestyle__WEBPACK_IMPORTED_MODULE_0__["stylesheet"])({
   wrapper: {
     margin: "0px auto",
-    padding: "100px 50px 0",
+    padding: "0px 40px 0",
     fontFamily: "arial",
     display: "flex",
     justifyContent: "space-between"
@@ -26759,6 +26768,11 @@ var _styles = Object(typestyle__WEBPACK_IMPORTED_MODULE_0__["stylesheet"])({
         transform: "scale(1.1)"
       }
     }
+  },
+  logo: {
+    width: "100px",
+    margin: "5% auto",
+    display: "block"
   }
 });
 

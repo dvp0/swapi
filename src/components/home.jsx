@@ -33,11 +33,18 @@ export function Home() {
   const { data, loading } = useFetch(api.films);
 
   return (
-    <div className={_styles.wrapper}>
+    <div>
 			<Loading condition={loading} />
-			{data && data.results.map((each, index) =>
-				<Movie key={index} movie={each} />
-			)}
+			{data &&
+				<>
+					<img src="/starwars.png" className={_styles.logo}/>
+					<div className={_styles.wrapper}>
+						{data.results.map((each, index) =>
+							<Movie key={index} movie={each} />
+						)}
+					</div>
+				</>
+			}
 		</div>
   );
 }

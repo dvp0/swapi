@@ -53,7 +53,7 @@ const config = {
     ],
   },
   plugins: [
-    new OpenBrowserPlugin({ url: 'http://localhost:7001' })
+    new OpenBrowserPlugin({ url: 'http://localhost:' + process.env.PORT || 7001 })
   ]
 };
 

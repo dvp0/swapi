@@ -4,7 +4,7 @@ import { colors } from "utils/values";
 export const _styles = stylesheet({
   wrapper: {
     margin: "0px auto",
-    padding: "100px 50px 0",
+    padding: "0px 40px 0",
     fontFamily: "arial",
     display: "flex",
     justifyContent: "space-between",
@@ -37,5 +37,10 @@ export const _styles = stylesheet({
         transform: "scale(1.1)",
       }
     }
+  },
+  logo: {
+    width: "100px",
+    margin: "5% auto",
+    display: "block",
   }
 });

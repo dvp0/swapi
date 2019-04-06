@@ -16,9 +16,9 @@ function Character({ character }) {
     <div className={_styles.character}>
 			<Image isCharacter text={character.name} />
 			<h4>{character.name}</h4>
-			<h5>mass: {character.mass}</h5>
-			<h5>height:{character.height}</h5>
-			<h5>home: {character.homeworld}</h5>
+			<h5 title="Mass">(M) {character.mass}</h5>
+			<h5 title="Height">(H) {character.height}</h5>
+			<h5 title="Home world">⌂ {character.homeworld}</h5>
 		</div>
   )
 }
