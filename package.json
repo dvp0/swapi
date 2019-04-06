@@ -47,7 +47,7 @@
     "webpack-prod": "./node_modules/.bin/webpack --mode=production",
     "surge": "cd public && ../node_modules/surge/lib/cli.js",
     "deploy-surge": "npm run webpack-prod && npm run surge",
-    "lint": "./node_modules/.bin/eslint src/ --fix",
+    "lint": "./node_modules/.bin/eslint src/ --fix"
   },
   "author": "Dev",
   "license": "ISC"
