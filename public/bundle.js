@@ -385,7 +385,10 @@ function CharacterList(_ref3) {
 
   var _characters = direction === "desc" ? _sortedChars.reverse() : _sortedChars;
 
-  setCharacters(charactersData);
+  if (charactersData.length) {
+    setCharacters(charactersData);
+  }
+
   return react__WEBPACK_IMPORTED_MODULE_1__["createElement"]("div", {
     className: styles_film__WEBPACK_IMPORTED_MODULE_8__["_styles"].charactersWrapper
   }, react__WEBPACK_IMPORTED_MODULE_1__["createElement"]("div", {
@@ -397,9 +400,9 @@ function CharacterList(_ref3) {
     onChange: setSort,
     onDirectionChange: setDirection,
     direction: direction
-  })), react__WEBPACK_IMPORTED_MODULE_1__["createElement"]("div", {
+  })), !!_characters.length && react__WEBPACK_IMPORTED_MODULE_1__["createElement"]("div", {
     className: styles_film__WEBPACK_IMPORTED_MODULE_8__["_styles"].characters
-  }, !!_characters.length && _characters.map(function (c, i) {
+  }, _characters.map(function (c, i) {
     return react__WEBPACK_IMPORTED_MODULE_1__["createElement"](Character, {
       key: i,
       character: c
@@ -1119,7 +1122,7 @@ var _styles = _babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_0___d
     textAlign: "center"
   },
   thumb: {
-    background: utils_values__WEBPACK_IMPORTED_MODULE_5__["colors"].dark,
+    background: utils_values__WEBPACK_IMPORTED_MODULE_5__["colors"].charcoal,
     height: "150px",
     width: "100px",
     objectFit: "cover",
@@ -1272,7 +1275,7 @@ var _styles = Object(typestyle__WEBPACK_IMPORTED_MODULE_1__["stylesheet"])({
   wrapper: {
     display: "inline-flex",
     width: "64px",
-    height: "64px",
+    height: "40px",
     marginTop: "-7px"
   }
 });

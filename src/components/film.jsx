@@ -51,11 +51,13 @@ function CharacterList({ movie, setCharacters }) {
 
   const [sort, setSort] = useState("name");
   const [direction, setDirection] = useState("asc");
-	const { charactersData, charactersLoading } = getCharactersData(movie); //  all the magic
+	let { charactersData, charactersLoading } = getCharactersData(movie); //  all the magic
 	const _sortedChars = _sortBy(charactersData, o => o[sort]);
 	const _characters = direction === "desc" ? _sortedChars.reverse() : _sortedChars;
 
-	setCharacters(charactersData);
+	if (charactersData.length) {
+		setCharacters(charactersData);
+	}
 
 	return (
 		<div className={_styles.charactersWrapper}>
@@ -66,9 +68,11 @@ function CharacterList({ movie, setCharacters }) {
 					<Sortable active={sort} onChange={setSort} onDirectionChange={setDirection} direction={direction}/>
 				}
 			</div>
-			<div className={_styles.characters}>
-				{!!_characters.length && _characters.map((c, i) => <Character key={i} character={c}/>)}
-			</div>
+			{!!_characters.length &&
+				<div className={_styles.characters}>
+					{_characters.map((c, i) => <Character key={i} character={c} />)}
+				</div>
+			}
 		</div>
 	);
 }

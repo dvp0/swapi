@@ -47,7 +47,7 @@ const _styles = stylesheet({
   wrapper: {
     display: "inline-flex",
     width: "64px",
-    height: "64px",
+    height: "40px",
     marginTop: "-7px"
   }
 });

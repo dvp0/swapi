@@ -9,7 +9,7 @@ const compression = require('compression');
 app.use(compression());
 app.use(express.static(path.join(__dirname, '/public/')));
 
-// following apis are routed through express so we don't have to deal with no-cors
+// following fun apis are routed through express so we don't have to deal with no-cors
 // headers issue directly from browser
 // omdb search for movie posters
 app.get('/poster', (req, res) => {
