@@ -5,10 +5,10 @@ import { colors } from "utils/values";
 import { navigate } from "@reach/router";
 
 const _styles = stylesheet({
-  svg: {
-    width: "40px",
+  back: {
+    width: "50px",
     transform: "rotate(270deg)",
-    padding: "40%",
+    margin: "35% auto",
     cursor: "pointer",
   },
   falconLines: {
@@ -23,9 +23,8 @@ const _styles = stylesheet({
 
 export function BackButton() {
   return (
-    <div onClick={() => navigate(api.homePage)}>
-      <svg xmlns="http://www.w3.org/2000/svg" data-name="Ebene 1" viewBox="0 0 32 40" x="0px" y="0px"
-           className={_styles.svg}>
+    <div onClick={() => navigate(api.homePage)} className={_styles.back}>
+      <svg xmlns="http://www.w3.org/2000/svg" data-name="Ebene 1" viewBox="0 0 32 40" x="0px" y="0px">
         <path className={_styles.falconLines}
               d="M14.52,19.1a1.25,1.25,0,1,0,1.25-1.25A1.25,1.25,0,0,0,14.52,19.1Zm1.5,0c0,.28-.5.28-.5,0a.25.25,0,1,1,.5,0Z"/>
         <path className={_styles.falconLines}

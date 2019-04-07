@@ -1,6 +1,8 @@
 var path = require('path');
 var BUILD_DIR = path.resolve(__dirname, './public');
 var APP_DIR = path.resolve(__dirname, './src');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+
 
 const config = {
   entry: {
@@ -9,7 +11,13 @@ const config = {
   devtool: "source-map",
   output: {
     filename: 'bundle.js',
+    publicPath: '/',
     path: BUILD_DIR,
+  },
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+    },
   },
   resolve: {
     extensions: [".js",".jsx"],
@@ -33,6 +41,10 @@ const config = {
         }]
       },
       {
+        test: /\.ico$/,
+        loader: 'file?name=public/[name].[ext]'
+      },
+      {
         test: /\.(eot|svg|ttf|woff|woff2)$/,
         loader: 'file-loader?name=fonts/[name].[ext]'
       },
@@ -50,7 +62,18 @@ const config = {
         }]
       }
     ]
-  }
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: 'Star Wars',
+      filename: 'index.html',
+      inject: false,
+      hash: true,
+      showErrors: false,
+      template: require('html-webpack-template'),
+      appMountId: "root"
+    })
+  ]
 };
 
 module.exports = config;

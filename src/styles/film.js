@@ -3,7 +3,8 @@ import { colors } from "utils/values";
 
 export const _styles = {
   sort: (isActive) => style({
-    padding: "5px 10px",
+    padding: "7px 12px",
+    fontSize: "14px",
     background: isActive ? colors.gray : colors.transparent,
     textTransform: "capitalize",
   }),
@@ -26,7 +27,7 @@ export const _styles = {
       color: colors.white,
     },
     right: {
-      padding: "50px 0 0 50px",
+      padding: "4% 0 0 4%",
       width: "85%",
       height: "inherit",
       background: colors.charcoal,
@@ -39,20 +40,19 @@ export const _styles = {
       flex: 1,
       $nest: {
         "h1": {
-          fontSize: "4em",
-          marginTop: "0px",
+          fontSize: "3em",
+          margin: "0px",
           color: colors.white,
         },
         "h4": {
           opacity: 0.7,
-          padding: "5px",
           fontWeight: "normal",
         }
       }
     },
     image: {
       width: "16%",
-      marginRight: "5%",
+      marginRight: "4%",
     },
     characters: {
       display: "flex",
@@ -60,7 +60,7 @@ export const _styles = {
       overflow: "scroll",
     },
     character: {
-      padding: "10px",
+      padding: "0 25px 10px 0",
       textAlign: "center",
       $nest: {
         "h3": {
@@ -73,6 +73,11 @@ export const _styles = {
           margin: "5px",
         }
       }
+    },
+    sub: {
+      width: "55%",
+      display: "flex",
+      justifyContent: "space-between",
     },
     thumbnail: {
       height: "auto",
@@ -101,6 +106,7 @@ export const _styles = {
     allSorts: {
       display: "inline-flex",
       cursor: "pointer",
+      marginTop: "5px",
     },
     arrow: {
       padding: "3px",

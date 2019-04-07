@@ -12,12 +12,14 @@ import { BackButton } from "components/back";
 const { useState } = React;
 
 function Character({ character }) {
+	const mass = character.mass === "unknown" ? " - " : character.mass;
+	const height = character.height === "unknown" ? " - " : character.height;
+
   return (
     <div className={_styles.character}>
 			<Image isCharacter text={character.name} />
 			<h4>{character.name}</h4>
-			<h5 title="Mass">(M) {character.mass}</h5>
-			<h5 title="Height">(H) {character.height}</h5>
+			<h5><span title="Mass">{mass}kg</span> | <span title="Height">{height}cm</span></h5>
 			<h5 title="Home world">⌂ {character.homeworld}</h5>
 		</div>
   )
@@ -65,13 +67,13 @@ function CharacterList({ characters }) {
 export function Film({ filmId }) {
 
   const { data, loading } = useFetch(api.film(filmId));
-  const { charsData, charsLoading } = useCharactersFetch((data || {})
+  const { charactersData, charactersLoading } = useCharactersFetch((data || {})
     .characters);
 
   return (
     <div className={_styles.wrapper}>
-			<Loading condition={loading || charsLoading} />
-			{data && charsData &&
+			<Loading condition={loading || charactersLoading} />
+			{data && charactersData &&
 				<>
 					<div className={_styles.left}>
 						<BackButton />
@@ -83,10 +85,14 @@ export function Film({ filmId }) {
 							</div>
 							<div className={_styles.content}>
 								<h1>{data.title}</h1>
-								<h4>Episode {data.episode_id} | Release on {data.release_date} | Directed by {data.director}</h4>
+								<h4 className={_styles.sub}>
+									<span>Episode {data.episode_id}</span>
+									<span>Release on {data.release_date}</span>
+									<span>Directed by {data.director}</span>
+								</h4>
 							</div>
 						</div>
-						<CharacterList characters={charsData} />
+						<CharacterList characters={charactersData} />
 					</div>
 				</>
 			}

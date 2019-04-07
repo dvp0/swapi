@@ -10,10 +10,14 @@ function getUniqueHomes(characters) {
   }, []);
 }
 
+function cleanValue(value) {
+  return value === "unknown" ? value : parseFloat(value.replace(",", ""));
+}
+
 export function useCharactersFetch(urls = []) {
 
-  const [charsData, setCharsData] = useState(null);
-  const [charsLoading, setCharsLoading] = useState(false);
+  const [charactersData, setCharsData] = useState(null);
+  const [charactersLoading, setCharactersLoading] = useState(false);
 
   useEffect(() => {
 
@@ -21,7 +25,7 @@ export function useCharactersFetch(urls = []) {
 
       if (urls.length) {
 
-        setCharsLoading(true);
+        setCharactersLoading(true);
 
         const finalResults = [];
         const _charsPromises = urls.map(url => fetchAndCacheResult(url));
@@ -33,15 +37,14 @@ export function useCharactersFetch(urls = []) {
         _charsResults.forEach(character => {
           finalResults.push({
             name: character.name,
-            homeworld: _homesResults.find(h => h.url === character.homeworld)
-              .name,
-            mass: character.mass,
-            height: character.height,
+            homeworld: _homesResults.find(h => h.url === character.homeworld).name,
+            mass: cleanValue(character.mass),
+            height: cleanValue(character.height),
           });
         });
 
         setCharsData(finalResults);
-        setCharsLoading(false);
+        setCharactersLoading(false);
       }
 
     }
@@ -51,7 +54,7 @@ export function useCharactersFetch(urls = []) {
   }, [urls]);
 
   return {
-    charsData,
-    charsLoading,
+    charactersData,
+    charactersLoading,
   };
 }

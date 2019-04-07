@@ -16,12 +16,13 @@ const _styles = {
 			flexDirection: "column",
 			color: colors.gray,
 			background: colors.dark,
+			height: "152px",
 		};
 
 		if (!isCharacter) {
 			_s = {
 				..._s,
-				height: "200px",
+				height: "250px",
 			};
 		}
 		return style(_s);
@@ -34,6 +35,7 @@ const _styles = {
 			textAlign: "center",
 		},
 		thumb: {
+			background: colors.dark,
 			height: "150px",
 			width: "100px",
 			objectFit: "cover",

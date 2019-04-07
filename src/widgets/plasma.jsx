@@ -217,107 +217,107 @@ cssRaw(`
 
 	/* Animations */
 	@keyframes yoda {
-		from { box-shadow: 0 0 0px #7EC855; }
-		50% { box-shadow: 0 0 25px #7EC855; }
-		to { box-shadow: 0 0 0px #7EC855; }
+		from { box-shadow: 0 0 0px #7EC855;  height: 0px; }
+		50% { box-shadow: 0 0 25px #7EC855; height: 270px; }
+		to { box-shadow: 0 0 0px #7EC855;  height: 0px; }
 	}
 	@-moz-keyframes yoda {
-		from { box-shadow: 0 0 0px #7EC855; }
-		50% { box-shadow: 0 0 25px #7EC855; }
-		to { box-shadow: 0 0 0px #7EC855; }
+		from { box-shadow: 0 0 0px #7EC855;  height: 0px; }
+		50% { box-shadow: 0 0 25px #7EC855; height: 270px; }
+		to { box-shadow: 0 0 0px #7EC855;  height: 0px; }
 	}
 	@-webkit-keyframes yoda {
-		from { box-shadow: 0 0 0px #7EC855; }
-		50% { box-shadow: 0 0 25px #7EC855; }
-		to { box-shadow: 0 0 0px #7EC855; }
+		from { box-shadow: 0 0 0px #7EC855;  height: 0px; }
+		50% { box-shadow: 0 0 25px #7EC855; height: 270px; }
+		to { box-shadow: 0 0 0px #7EC855;  height: 0px; }
 	}
 	@-o-keyframes yoda {
-		from { box-shadow: 0 0 0px #7EC855; }
-		50% { box-shadow: 0 0 25px #7EC855; }
-		to { box-shadow: 0 0 0px #7EC855; }
+		from { box-shadow: 0 0 0px #7EC855;  height: 0px; }
+		50% { box-shadow: 0 0 25px #7EC855; height: 270px; }
+		to { box-shadow: 0 0 0px #7EC855;  height: 0px; }
 	}
 	@-ms-keyframes yoda {
-		from { box-shadow: 0 0 0px #7EC855; }
-		50% { box-shadow: 0 0 25px #7EC855; }
-		to { box-shadow: 0 0 0px #7EC855; }
+		from { box-shadow: 0 0 0px #7EC855;  height: 0px; }
+		50% { box-shadow: 0 0 25px #7EC855; height: 270px; }
+		to { box-shadow: 0 0 0px #7EC855;  height: 0px; }
 	}
 
 	@keyframes vader {
-		from { box-shadow: 0 0 0px #e51115; }
-		50% { box-shadow: 0 0 25px #e51115; }
-		to { box-shadow: 0 0 0px #e51115; }
+		from { box-shadow: 0 0 0px #e51115; height: 0; }
+		50% { box-shadow: 0 0 25px #e51115; height: 270; }
+		to { box-shadow: 0 0 0px #e51115; height: 0; }
 	}
 	@-moz-keyframes vader {
-		from { box-shadow: 0 0 0px #e51115; }
-		50% { box-shadow: 0 0 25px #e51115; }
-		to { box-shadow: 0 0 0px #e51115; }
+		from { box-shadow: 0 0 0px #e51115; height: 0; }
+		50% { box-shadow: 0 0 25px #e51115; height: 270; }
+		to { box-shadow: 0 0 0px #e51115; height: 0; }
 	}
 	@-webkit-keyframes vader {
-		from { box-shadow: 0 0 0px #e51115; }
-		50% { box-shadow: 0 0 25px #e51115; }
-		to { box-shadow: 0 0 0px #e51115; }
+		from { box-shadow: 0 0 0px #e51115; height: 0; }
+		50% { box-shadow: 0 0 25px #e51115; height: 270; }
+		to { box-shadow: 0 0 0px #e51115; height: 0; }
 	}
 	@-o-keyframes vader {
-		from { box-shadow: 0 0 0px #e51115; }
-		50% { box-shadow: 0 0 25px #e51115; }
-		to { box-shadow: 0 0 0px #e51115; }
+		from { box-shadow: 0 0 0px #e51115; height: 0; }
+		50% { box-shadow: 0 0 25px #e51115; height: 270; }
+		to { box-shadow: 0 0 0px #e51115; height: 0; }
 	}
 	@-ms-keyframes vader {
-		from { box-shadow: 0 0 0px #e51115; }
-		50% { box-shadow: 0 0 25px #e51115; }
-		to { box-shadow: 0 0 0px #e51115; }
+		from { box-shadow: 0 0 0px #e51115; height: 0; }
+		50% { box-shadow: 0 0 25px #e51115; height: 270; }
+		to { box-shadow: 0 0 0px #e51115; height: 0; }
 	}
 
 	@keyframes windu {
-		from { box-shadow: 0 0 0px #ca74dd; }
-		50% { box-shadow: 0 0 25px #ca74dd; }
-		to { box-shadow: 0 0 0px #ca74dd; }
+		from { box-shadow: 0 0 0px #ca74dd; height: 0px; }
+		50% { box-shadow: 0 0 25px #ca74dd; height: 270; }
+		to { box-shadow: 0 0 0px #ca74dd; height: 0px; }
 	}
 	@-moz-keyframes windu {
-		from { box-shadow: 0 0 0px #ca74dd; }
-		50% { box-shadow: 0 0 25px #ca74dd; }
-		to { box-shadow: 0 0 0px #ca74dd; }
+		from { box-shadow: 0 0 0px #ca74dd; height: 0px; }
+		50% { box-shadow: 0 0 25px #ca74dd; height: 270; }
+		to { box-shadow: 0 0 0px #ca74dd; height: 0px; }
 	}
 	@-webkit-keyframes windu {
-		from { box-shadow: 0 0 0px #ca74dd; }
-		50% { box-shadow: 0 0 25px #ca74dd; }
-		to { box-shadow: 0 0 0px #ca74dd; }
+		from { box-shadow: 0 0 0px #ca74dd; height: 0px; }
+		50% { box-shadow: 0 0 25px #ca74dd; height: 270; }
+		to { box-shadow: 0 0 0px #ca74dd; height: 0px; }
 	}
 	@-o-keyframes windu {
-		from { box-shadow: 0 0 0px #ca74dd; }
-		50% { box-shadow: 0 0 25px #ca74dd; }
-		to { box-shadow: 0 0 0px #ca74dd; }
+		from { box-shadow: 0 0 0px #ca74dd; height: 0px; }
+		50% { box-shadow: 0 0 25px #ca74dd; height: 270; }
+		to { box-shadow: 0 0 0px #ca74dd; height: 0px; }
 	}
 	@-ms-keyframes windu {
-		from { box-shadow: 0 0 0px #ca74dd; }
-		50% { box-shadow: 0 0 25px #ca74dd; }
-		to { box-shadow: 0 0 0px #ca74dd; }
+		from { box-shadow: 0 0 0px #ca74dd; height: 0px; }
+		50% { box-shadow: 0 0 25px #ca74dd; height: 270; }
+		to { box-shadow: 0 0 0px #ca74dd; height: 0px; }
 	}
 
 	@keyframes obi-wan {
-		from { box-shadow: 0 0 0px #3784d6; }
-		50% { box-shadow: 0 0 25px #3784d6; }
-		to { box-shadow: 0 0 0px #3784d6; }
+		from { box-shadow: 0 0 0px #3784d6; height: 0px; }
+		50% { box-shadow: 0 0 25px #3784d6; height: 270; }
+		to { box-shadow: 0 0 0px #3784d6; height: 0px; }
 	}
 	@-moz-keyframes obi-wan {
-		from { box-shadow: 0 0 0px #3784d6; }
-		50% { box-shadow: 0 0 25px #3784d6; }
-		to { box-shadow: 0 0 0px #3784d6; }
+		from { box-shadow: 0 0 0px #3784d6; height: 0px; }
+		50% { box-shadow: 0 0 25px #3784d6; height: 270; }
+		to { box-shadow: 0 0 0px #3784d6; height: 0px; }
 	}
 	@-webkit-keyframes obi-wan {
-		from { box-shadow: 0 0 0px #3784d6; }
-		50% { box-shadow: 0 0 25px #3784d6; }
-		to { box-shadow: 0 0 0px #3784d6; }
+		from { box-shadow: 0 0 0px #3784d6; height: 0px; }
+		50% { box-shadow: 0 0 25px #3784d6; height: 270; }
+		to { box-shadow: 0 0 0px #3784d6; height: 0px; }
 	}
 	@-o-keyframes obi-wan {
-		from { box-shadow: 0 0 0px #3784d6; }
-		50% { box-shadow: 0 0 25px #3784d6; }
-		to { box-shadow: 0 0 0px #3784d6; }
+		from { box-shadow: 0 0 0px #3784d6; height: 0px; }
+		50% { box-shadow: 0 0 25px #3784d6; height: 270; }
+		to { box-shadow: 0 0 0px #3784d6; height: 0px; }
 	}
 	@-ms-keyframes obi-wan {
-		from { box-shadow: 0 0 0px #3784d6; }
-		50% { box-shadow: 0 0 25px #3784d6; }
-		to { box-shadow: 0 0 0px #3784d6; }
+		from { box-shadow: 0 0 0px #3784d6; height: 0px; }
+		50% { box-shadow: 0 0 25px #3784d6; height: 270; }
+		to { box-shadow: 0 0 0px #3784d6; height: 0px; }
 	}
 
 `);
@@ -338,7 +338,7 @@ const _styles = stylesheet({
 
 export function Loading({ condition }) {
 
-	const plasmas = ["yoda", "vader", "windu", "obi-wan"];
+	const plasmas = ["yoda", "obi-wan", "vader", "windu"];
 	const random = plasmas[Math.floor(Math.random() * plasmas.length)];
 
 	return condition && (
