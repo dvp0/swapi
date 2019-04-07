@@ -11,12 +11,14 @@ function getUniqueHomes(characters) {
 }
 
 function cleanValue(value) {
-  return value === "unknown" ? value : parseFloat(value.replace(",", ""));
+  return value === "unknown" ? Infinity : parseFloat(value.replace(",", ""));
 }
 
-export function useCharactersFetch(urls = []) {
+export function getCharactersData(_movie = {}) {
 
-  const [charactersData, setCharsData] = useState(null);
+  const movie = (_movie || {});
+  const urls = movie.characters || [];
+  const [charactersData, setCharsData] = useState([]);
   const [charactersLoading, setCharactersLoading] = useState(false);
 
   useEffect(() => {
@@ -40,6 +42,7 @@ export function useCharactersFetch(urls = []) {
             homeworld: _homesResults.find(h => h.url === character.homeworld).name,
             mass: cleanValue(character.mass),
             height: cleanValue(character.height),
+            species: character.species[0]
           });
         });
 
@@ -51,7 +54,7 @@ export function useCharactersFetch(urls = []) {
 
     getCharactersAndHomes();
 
-  }, [urls]);
+  }, [urls, movie]);
 
   return {
     charactersData,

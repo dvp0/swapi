@@ -20,12 +20,24 @@ cssRule("html, body", {
 	color: colors.white,
 });
 
-// document.querySelector("link[rel*="icon"]").href = `/favicon-${Math.floor(Math.random() * 9)}.ico`;
+// Using classic React.Component as hooks doesn't have proper
+// setup for error boundry yet
+class Wrapper extends React.Component {
+	componentDidCatchError(e) {
+		console.error(e);
+	}
+
+	render () {
+		return (
+			<Router>
+				<Home path="/" />
+				<Film path="films/:filmId" />
+			</Router>
+		);
+	}
+}
 
 render(
-	<Router>
-		<Home path="/" />
-		<Film path="films/:filmId" />
-	</Router>,
+	<Wrapper/>,
 	document.getElementById("root")
 );

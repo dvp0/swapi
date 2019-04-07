@@ -13,7 +13,7 @@ export const _styles = {
       fontFamily: "arial",
       display: "flex",
       justifyContent: "space-between",
-      minHeight: "100vh",
+      height: "100vh",
       flexFlow: "row wrap",
       overflow: "hidden",
     },
@@ -27,17 +27,28 @@ export const _styles = {
       color: colors.white,
     },
     right: {
-      padding: "4% 0 0 4%",
       width: "85%",
       height: "inherit",
       background: colors.charcoal,
+      overflow: "scroll",
     },
-    contentWrapper: {
+    headerWrapper: {
+      margin: "4%",
+      marginBottom: "0",
       display: "flex",
       flexFlow: "row wrap",
     },
+    charactersWrapper: {
+      margin: "4%",
+      padding: "25px 30px",
+      background: colors.dark,
+      borderRadius: "20px",
+    },
     content: {
       flex: 1,
+      display: "flex",
+      flexFlow: "column wrap",
+      justifyContent: "space-between",
       $nest: {
         "h1": {
           fontSize: "3em",
@@ -50,14 +61,33 @@ export const _styles = {
         }
       }
     },
+    speciesList: {
+      fontStyle: "italic",
+      lineHeight: 1.5,
+      width: "55%",
+      paddingBottom: "10px",
+    },
     image: {
       width: "16%",
       marginRight: "4%",
+    },
+    charactersTitle: {
+      display: "flex",
+      justifyContent: "space-between",
+      margin: "0px",
+      $nest: {
+        "h3": {
+          fontSize: "2em",
+          color: colors.white,
+          margin: "0px",
+        }
+      }
     },
     characters: {
       display: "flex",
       flexFlow: "row nowrap",
       overflow: "scroll",
+      marginTop: "30px",
     },
     character: {
       padding: "0 25px 10px 0",
@@ -75,7 +105,7 @@ export const _styles = {
       }
     },
     sub: {
-      width: "55%",
+      width: "500px",
       display: "flex",
       justifyContent: "space-between",
     },
@@ -83,20 +113,8 @@ export const _styles = {
       height: "auto",
       width: "inherit",
     },
-    charactersTitle: {
-      display: "flex",
-      justifyContent: "space-between",
-      margin: "40px 40px 15px 0",
-      $nest: {
-        "h3": {
-          fontSize: "2em",
-          color: colors.white,
-          margin: "0px",
-        }
-      }
-    },
     sortWrapper: {
-      background: colors.dark,
+      background: colors.charcoal,
       borderRadius: "3px",
       display: "inline-flex",
       overflow: "hidden",
@@ -109,7 +127,7 @@ export const _styles = {
       marginTop: "5px",
     },
     arrow: {
-      padding: "3px",
+      padding: "3px 0 0 15px",
     }
   })
 };

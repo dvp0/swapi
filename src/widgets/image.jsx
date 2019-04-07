@@ -35,7 +35,7 @@ const _styles = {
 			textAlign: "center",
 		},
 		thumb: {
-			background: colors.dark,
+			background: colors.charcoal,
 			height: "150px",
 			width: "100px",
 			objectFit: "cover",

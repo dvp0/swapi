@@ -19,6 +19,7 @@
     "localstorage-fifo": "^2.0.1",
     "lodash.sortby": "^4.7.0",
     "movie-art": "^2.0.3",
+    "pluralize": "^7.0.0",
     "react": "^16.8.0",
     "react-dom": "^16.8.0",
     "serve-favicon": "^2.5.0",

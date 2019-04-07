@@ -27,6 +27,7 @@ const config = {
       'styles': APP_DIR + '/styles',
       'hooks': APP_DIR + '/hooks',
       'widgets': APP_DIR + '/widgets',
+      'visuals': APP_DIR + '/visuals'
     }
   },
   module: {

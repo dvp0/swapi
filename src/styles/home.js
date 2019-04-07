@@ -40,7 +40,7 @@ export const _styles = stylesheet({
   },
   logo: {
     width: "100px",
-    margin: "5% auto",
+    margin: "7% auto",
     display: "block",
   }
 });

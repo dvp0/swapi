@@ -13,6 +13,7 @@ import { Image } from "widgets/image";
 
 // styles
 import { _styles } from "styles/home";
+import { StarWarsLogo } from 'visuals/wars';
 
 function Movie({ movie }) {
   const movieId = movie.url.substr(-2, 1);
@@ -37,7 +38,9 @@ export function Home() {
 			<Loading condition={loading} />
 			{data &&
 				<>
-					<img src="/starwars.png" className={_styles.logo}/>
+					<div className={_styles.logo}>
+						<StarWarsLogo />
+					</div>
 					<div className={_styles.wrapper}>
 						{data.results.map((each, index) =>
 							<Movie key={index} movie={each} />

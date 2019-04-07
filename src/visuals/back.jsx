@@ -1,5 +1,5 @@
 import * as React from "react";
-import { stylesheet } from "typestyle";
+import { stylesheet } from "typestyle/lib/index";
 import { api } from "utils/api";
 import { colors } from "utils/values";
 import { navigate } from "@reach/router";
@@ -10,6 +10,7 @@ const _styles = stylesheet({
     transform: "rotate(270deg)",
     margin: "35% auto",
     cursor: "pointer",
+    paddingTop: "15px",
   },
   falconLines: {
     fill: colors.pale,
