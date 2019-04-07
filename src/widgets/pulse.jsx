@@ -9,6 +9,7 @@ cssRaw(`
     position: relative;
     width: 64px;
     height: 64px;
+    margin-top: -7px;
   }
   .lds-facebook div {
     display: inline-block;
@@ -47,7 +48,7 @@ const _styles = stylesheet({
     display: "inline-flex",
     width: "64px",
     height: "40px",
-    marginTop: "-7px"
+    marginTop: "-7px",
   }
 });
 
