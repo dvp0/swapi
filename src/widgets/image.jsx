@@ -56,7 +56,7 @@ const _styles = {
 export function Image({ text, isCharacter }) {
 
 	const _url = isCharacter ? api.character(text) : api.poster(text);
-	const _isSurged = true;
+	const _isSurged = window.location.host.indexOf("surge.sh") > -1;
 	const _placeholder = _isSurged
 		? <a href="https://obi-van.herokuapp.com/">Go to fun version</a>
 		: <LoadingPulse condition={true} />;

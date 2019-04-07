@@ -1016,7 +1016,7 @@ function Image(_ref) {
 
   var _url = isCharacter ? utils_api__WEBPACK_IMPORTED_MODULE_5__["api"].character(text) : utils_api__WEBPACK_IMPORTED_MODULE_5__["api"].poster(text);
 
-  var _isSurged = true;
+  var _isSurged = window.location.host.indexOf("surge.sh") > -1;
 
   var _placeholder = _isSurged ? react__WEBPACK_IMPORTED_MODULE_1__["createElement"]("a", {
     href: "https://obi-van.herokuapp.com/"
