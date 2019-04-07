@@ -294,8 +294,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var utils_api__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(61);
 /* harmony import */ var widgets_plasma__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(62);
 /* harmony import */ var widgets_image__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(63);
-/* harmony import */ var visuals_back__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(66);
-/* harmony import */ var widgets_pulse__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(72);
+/* harmony import */ var visuals_back__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(67);
+/* harmony import */ var widgets_pulse__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(66);
 /* harmony import */ var styles_film__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(73);
 
 
@@ -955,7 +955,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(10);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var typestyle__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(22);
-/* harmony import */ var widgets_pulse__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(72);
+/* harmony import */ var widgets_pulse__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(66);
 /* harmony import */ var hooks_fetch__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(53);
 /* harmony import */ var utils_api__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(61);
 /* harmony import */ var utils_values__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(44);
@@ -1021,7 +1021,8 @@ function Image(_ref) {
   var _placeholder = _isSurged ? react__WEBPACK_IMPORTED_MODULE_1__["createElement"]("a", {
     href: "https://obi-van.herokuapp.com/"
   }, "Go to fun version") : react__WEBPACK_IMPORTED_MODULE_1__["createElement"](widgets_pulse__WEBPACK_IMPORTED_MODULE_3__["LoadingPulse"], {
-    condition: true
+    condition: true,
+    color: utils_values__WEBPACK_IMPORTED_MODULE_6__["colors"].gray
   });
 
   var _className = isCharacter ? _styles.thumb : _styles.image;
@@ -1053,10 +1054,56 @@ function Image(_ref) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoadingPulse", function() { return LoadingPulse; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(10);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var typestyle__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(22);
+/* harmony import */ var utils_values__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(44);
+
+
+ // pure css implementation of pulse gif, this block is taken from https://loading.io/css/
+
+Object(typestyle__WEBPACK_IMPORTED_MODULE_1__["cssRaw"])("\n  .lds-facebook {\n    display: inline-block;\n    position: relative;\n    width: 64px;\n    height: 64px;\n  }\n  .lds-facebook div {\n    display: inline-block;\n    position: absolute;\n    border-radius: 3px;\n    left: 6px;\n    width: 8px;\n    animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;\n  }\n  .lds-facebook div:nth-child(1) {\n    left: 6px;\n    animation-delay: -0.24s;\n  }\n  .lds-facebook div:nth-child(2) {\n    left: 26px;\n    animation-delay: -0.12s;\n  }\n  .lds-facebook div:nth-child(3) {\n    left: 45px;\n    animation-delay: 0;\n  }\n  @keyframes lds-facebook {\n    0% {\n      top: 6px;\n      height: 51px;\n    }\n    50%, 100% {\n      top: 19px;\n      height: 26px;\n    }\n  }\n");
+
+var _styles = Object(typestyle__WEBPACK_IMPORTED_MODULE_1__["stylesheet"])({
+  wrapper: {
+    display: "inline-flex",
+    width: "64px",
+    height: "40px",
+    marginTop: "-7px"
+  }
+});
+
+function LoadingPulse(_ref) {
+  var condition = _ref.condition,
+      color = _ref.color;
+  var style = {
+    background: color || utils_values__WEBPACK_IMPORTED_MODULE_2__["colors"].white
+  };
+  return condition ? react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", {
+    className: _styles.wrapper
+  }, react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", {
+    className: "lds-facebook"
+  }, react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", {
+    style: style
+  }), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", {
+    style: style
+  }), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", {
+    style: style
+  }))) : false;
+}
+
+/***/ }),
+
+/***/ 67:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BackButton", function() { return BackButton; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(10);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var typestyle_lib_index__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(67);
+/* harmony import */ var typestyle_lib_index__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(68);
 /* harmony import */ var typestyle_lib_index__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(typestyle_lib_index__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var utils_api__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(61);
 /* harmony import */ var utils_values__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(44);
@@ -1138,42 +1185,6 @@ function BackButton() {
     className: _styles.falconLines,
     d: "M18.43,6.92a1.08,1.08,0,1,0,1.08-1.08A1.08,1.08,0,0,0,18.43,6.92Zm1.08-.08a.08.08,0,0,1,.08.08c0,.09-.17.09-.17,0A.08.08,0,0,1,19.51,6.83Z"
   })));
-}
-
-/***/ }),
-
-/***/ 72:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoadingPulse", function() { return LoadingPulse; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(10);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var typestyle__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(22);
-/* harmony import */ var utils_values__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(44);
-
-
- // pure css implementation of pulse gif, this block is taken from https://loading.io/css/
-
-Object(typestyle__WEBPACK_IMPORTED_MODULE_1__["cssRaw"])("\n  .lds-facebook {\n    display: inline-block;\n    position: relative;\n    width: 64px;\n    height: 64px;\n  }\n  .lds-facebook div {\n    display: inline-block;\n    position: absolute;\n    border-radius: 3px;\n    left: 6px;\n    width: 8px;\n    background: ".concat(utils_values__WEBPACK_IMPORTED_MODULE_2__["colors"].white, ";\n    animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;\n  }\n  .lds-facebook div:nth-child(1) {\n    left: 6px;\n    animation-delay: -0.24s;\n  }\n  .lds-facebook div:nth-child(2) {\n    left: 26px;\n    animation-delay: -0.12s;\n  }\n  .lds-facebook div:nth-child(3) {\n    left: 45px;\n    animation-delay: 0;\n  }\n  @keyframes lds-facebook {\n    0% {\n      top: 6px;\n      height: 51px;\n    }\n    50%, 100% {\n      top: 19px;\n      height: 26px;\n    }\n  }\n"));
-
-var _styles = Object(typestyle__WEBPACK_IMPORTED_MODULE_1__["stylesheet"])({
-  wrapper: {
-    display: "inline-flex",
-    width: "64px",
-    height: "40px",
-    marginTop: "-7px"
-  }
-});
-
-function LoadingPulse(_ref) {
-  var condition = _ref.condition;
-  return condition ? react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", {
-    className: _styles.wrapper
-  }, react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", {
-    className: "lds-facebook"
-  }, react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", null), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", null), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", null))) : false;
 }
 
 /***/ }),

@@ -15789,7 +15789,8 @@ module.exports = _defineProperty;
 
 /***/ }),
 /* 66 */,
-/* 67 */
+/* 67 */,
+/* 68 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15799,21 +15800,21 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var typestyle_1 = __webpack_require__(68);
+var typestyle_1 = __webpack_require__(69);
 
 exports.TypeStyle = typestyle_1.TypeStyle;
 /**
  * All the CSS types in the 'types' namespace
  */
 
-var types = __webpack_require__(71);
+var types = __webpack_require__(72);
 
 exports.types = types;
 /**
  * Export certain utilities
  */
 
-var utilities_1 = __webpack_require__(70);
+var utilities_1 = __webpack_require__(71);
 
 exports.extend = utilities_1.extend;
 exports.classes = utilities_1.classes;
@@ -15902,7 +15903,7 @@ function createTypeStyle(target) {
 exports.createTypeStyle = createTypeStyle;
 
 /***/ }),
-/* 68 */
+/* 69 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15914,9 +15915,9 @@ Object.defineProperty(exports, "__esModule", {
 
 var FreeStyle = __webpack_require__(24);
 
-var formatting_1 = __webpack_require__(69);
+var formatting_1 = __webpack_require__(70);
 
-var utilities_1 = __webpack_require__(70);
+var utilities_1 = __webpack_require__(71);
 /**
  * Creates an instance of free style with our options
  */
@@ -16194,7 +16195,7 @@ function () {
 exports.TypeStyle = TypeStyle;
 
 /***/ }),
-/* 69 */
+/* 70 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16269,7 +16270,7 @@ function explodeKeyframes(frames) {
 exports.explodeKeyframes = explodeKeyframes;
 
 /***/ }),
-/* 70 */
+/* 71 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16394,7 +16395,7 @@ var mediaLength = function (value) {
 };
 
 /***/ }),
-/* 71 */
+/* 72 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

@@ -16,7 +16,6 @@ cssRaw(`
     border-radius: 3px;
     left: 6px;
     width: 8px;
-    background: ${colors.white};
     animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
   }
   .lds-facebook div:nth-child(1) {
@@ -52,13 +51,14 @@ const _styles = stylesheet({
   }
 });
 
-export function LoadingPulse({ condition }) {
+export function LoadingPulse({ condition, color }) {
+  const style = { background: color || colors.white};
   return condition ? (
     <div className={_styles.wrapper}>
       <div className="lds-facebook">
-        <div></div>
-        <div></div>
-        <div></div>
+        <div style={style}></div>
+        <div style={style}></div>
+        <div style={style}></div>
       </div>
     </div>
   ) : false;

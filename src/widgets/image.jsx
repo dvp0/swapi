@@ -59,7 +59,7 @@ export function Image({ text, isCharacter }) {
 	const _isSurged = window.location.host.indexOf("surge.sh") > -1;
 	const _placeholder = _isSurged
 		? <a href="https://obi-van.herokuapp.com/">Go to fun version</a>
-		: <LoadingPulse condition={true} />;
+		: <LoadingPulse condition={true} color={colors.gray}/>;
 	const _className = isCharacter ? _styles.thumb : _styles.image;
 
 	if (!_isSurged) {
