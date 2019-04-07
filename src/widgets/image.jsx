@@ -1,5 +1,6 @@
 import * as React from "react";
 import { style, stylesheet, classes } from "typestyle";
+import { LoadingPulse } from "widgets/pulse";
 
 // helpers
 import { useFetch } from "hooks/fetch";
@@ -15,7 +16,7 @@ const _styles = {
 			justifyContent: "center",
 			flexDirection: "column",
 			color: colors.gray,
-			background: colors.dark,
+			background: colors.charcoal,
 			height: "152px",
 		};
 
@@ -23,6 +24,7 @@ const _styles = {
 			_s = {
 				..._s,
 				height: "250px",
+				background: colors.dark,
 			};
 		}
 		return style(_s);
@@ -40,27 +42,36 @@ const _styles = {
 			width: "100px",
 			objectFit: "cover",
 			borderRadius: "5px",
+		},
+		placeholderText: {
+			padding: "0px 10px",
 		}
 	})
 };
 
+
+// It renders an empty box >> hits our express app to get link to the image >> renders the image
+// these calls to the express app are also cached for time specified.
+
 export function Image({ text, isCharacter }) {
 
-	// lazy loading images
 	const _url = isCharacter ? api.character(text) : api.poster(text);
-	const _isSurged = window.location.host.indexOf("surge.sh") > -1;
-	const _placeholder = _isSurged ? "(run locally to view images)" : "...";
+	const _isSurged = true;
+	const _placeholder = _isSurged
+		? <a href="https://obi-van.herokuapp.com/">Go to fun version</a>
+		: <LoadingPulse condition={true} />;
 	const _className = isCharacter ? _styles.thumb : _styles.image;
 
-	const { data, loading } = useFetch(_url, [text]);
-
-	if (!loading && data && !_isSurged) {
-		return (<img src={data.value} className={_className} />);
+	if (!_isSurged) {
+		const {data, loading} = useFetch(_url, [text]);
+		if (!loading && data && !_isSurged) {
+			return (<img src={data.value} className={_className}/>);
+		}
 	}
 
 	return (
 		<div className={classes(_className, _styles.placeholder(isCharacter))}>
-			{_placeholder}
+			<div className={_styles.placeholderText}>{_placeholder}</div>
 		</div>
 	);
 

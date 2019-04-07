@@ -2,7 +2,7 @@ import { EXPIRE_IN_SECONDS } from "utils/values";
 import Fifo from "localstorage-fifo";
 const cache = new Fifo({ namespace: 'darth' });
 
-// Simple local storage caching system
+// Simple yet robust local storage caching system
 
 export function getCachedResult(url) {
   return cache.get(encodeURI(url));

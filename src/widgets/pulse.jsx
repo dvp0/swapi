@@ -52,7 +52,7 @@ const _styles = stylesheet({
   }
 });
 
-export function Loading({ condition }) {
+export function LoadingPulse({ condition }) {
   return condition ? (
     <div className={_styles.wrapper}>
       <div className="lds-facebook">

@@ -1,3 +1,5 @@
+// fun utility to change favicon on every page load
+
 (function() {
   var link = document.querySelector("link[rel*='icon']") || document.createElement('link');
   link.type = 'image/x-icon';

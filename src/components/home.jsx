@@ -8,7 +8,7 @@ import { navigate } from "@reach/router";
 import { api } from "utils/api";
 
 // components
-import { Loading } from "widgets/plasma";
+import { LoadingSaber } from "widgets/plasma";
 import { Image } from "widgets/image";
 
 // styles
@@ -32,10 +32,9 @@ function Movie({ movie }) {
 
 export function Home() {
   const { data, loading } = useFetch(api.films);
-
   return (
     <div>
-			<Loading condition={loading} />
+			<LoadingSaber condition={loading} />
 			{data &&
 				<>
 					<div className={_styles.logo}>

@@ -1,5 +1,4 @@
 // js modules
-import "babel-polyfill";
 import "utils/favicon";
 import * as React from "react";
 import { render } from "react-dom";
@@ -19,9 +18,22 @@ cssRule("html, body", {
 	margin: "0px",
 	color: colors.white,
 });
+cssRule("a", {
+	color: colors.whiskey,
+	textDecoration: "none",
+	$nest: {
+		"&:visited": {
+			color: colors.whiskey,
+		},
+		"&:hover": {
+			color: colors.amber,
+			textDecoration: "underline",
+		}
+	}
+});
 
 // Using classic React.Component as hooks doesn't have proper
-// setup for error boundry yet
+// support for error boundry yet
 class Wrapper extends React.Component {
 	componentDidCatchError(e) {
 		console.error(e);

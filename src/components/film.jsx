@@ -1,18 +1,18 @@
-import * as React from "react";
+import React, { useState } from "react";
 import _sortBy from "lodash.sortby";
-
 import pluralize  from "pluralize";
+
 import { useFetch } from "hooks/fetch";
-import { getCharactersData } from "hooks/characters";
-import { getSpeciesData } from "hooks/species";
+import { useCharactersFetch } from "hooks/characters";
+import { useSpeciesFetch } from "hooks/species";
 import { api } from "utils/api";
-import { _styles } from "styles/film";
-import { Loading } from "widgets/plasma";
+
+import { LoadingSaber } from "widgets/plasma";
 import { Image } from "widgets/image";
 import { BackButton } from "visuals/back";
-import { Loading as Pulse } from "widgets/pulse";
+import { LoadingPulse } from "widgets/pulse";
 
-const { useState } = React;
+import { _styles } from "styles/film";
 
 function Character({ character }) {
 	const mass = character.mass === Infinity ? " - " : character.mass;
@@ -51,11 +51,15 @@ function CharacterList({ movie, setCharacters }) {
 
   const [sort, setSort] = useState("name");
   const [direction, setDirection] = useState("asc");
-	let { charactersData, charactersLoading } = getCharactersData(movie); //  all the magic
+	let { charactersData, charactersLoading } = useCharactersFetch(movie); //  all the magic in there
 	const _sortedChars = _sortBy(charactersData, o => o[sort]);
 	const _characters = direction === "desc" ? _sortedChars.reverse() : _sortedChars;
 
 	if (charactersData.length) {
+		// SpeciesList (sibling) component relies on this data, so rather than introducing
+		// something like redux which would be overkill for one use case of this app,
+		// doing this neat trick where parent component will take care of passing it
+		// down to sibling component
 		setCharacters(charactersData);
 	}
 
@@ -63,7 +67,7 @@ function CharacterList({ movie, setCharacters }) {
 		<div className={_styles.charactersWrapper}>
 			<div className={_styles.charactersTitle}>
 				<h3>Characters</h3>
-				<Pulse condition={charactersLoading} />
+				<LoadingPulse condition={charactersLoading} />
 				{!!_characters.length &&
 					<Sortable active={sort} onChange={setSort} onDirectionChange={setDirection} direction={direction}/>
 				}
@@ -78,10 +82,10 @@ function CharacterList({ movie, setCharacters }) {
 }
 
 function SpeciesList({ movie, characters }) {
-	const { speciesData, speciesLoading } = getSpeciesData((movie || {}).species, characters);
+	const { speciesData, speciesLoading } = useSpeciesFetch((movie || {}).species, characters);
 
 	if (speciesData && !speciesLoading) {
-		const _last = speciesData.pop();
+		const _last = speciesData.pop(); // because .... linguistic .... perfection
 		const renderTupal = s => pluralize(s.name.toLowerCase(), s.value, true);
 
 		return (
@@ -90,7 +94,7 @@ function SpeciesList({ movie, characters }) {
 			</div>
 		);
 	}
-	return <Pulse condition={!!characters.length && speciesLoading} />;
+	return <LoadingPulse condition={!!characters.length && speciesLoading} />;
 }
 
 export function Film({ filmId }) {
@@ -100,7 +104,7 @@ export function Film({ filmId }) {
 
   return (
     <div className={_styles.wrapper}>
-			<Loading condition={loading} />
+			<LoadingSaber condition={loading} />
 			{data &&
 				<>
 					<div className={_styles.left}>

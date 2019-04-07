@@ -8,5 +8,7 @@ export const colors = {
   gray: "#262b2f",
   pale: "#D5D5D5",
   white: "#FFFFFF",
+  amber: "#DAB900",
+  whiskey: "#544700",
   transparent: "transparent",
 };

@@ -1,17 +1,23 @@
 import { useState, useEffect } from "react";
 import { fetchAndCacheResult } from "utils/cache";
 
-export function getSpeciesData(speciesUrls = {}, _charactersData = []) {
+// Responsible for fetching all the species and based on previously fetched
+// character details, counts the number of each species in that list
+// returning following format for ease of rendering
+// [{
+//   name: "Humans",
+//   value: 3
+// }]
 
-  // const movie = (_movie || {});
-  // const speciesUrls = movie.species || [];
+export function useSpeciesFetch(speciesUrls = {}, _charactersData = []) {
+
   const charactersData = _charactersData || [];
   const [speciesData, setSpeciesData] = useState(null);
   const [speciesLoading, setSpeciesLoading] = useState(false);
 
   useEffect(() => {
 
-    async function getSpeciesData() {
+    async function useSpeciesDataFetch() {
 
       if (speciesUrls.length && charactersData.length) {
 
@@ -33,7 +39,7 @@ export function getSpeciesData(speciesUrls = {}, _charactersData = []) {
 
     }
 
-    getSpeciesData(_charactersData);
+    useSpeciesDataFetch(_charactersData);
 
   }, [_charactersData, charactersData, speciesUrls]);
 

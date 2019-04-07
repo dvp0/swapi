@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
 import { cacheResult, getCachedResult } from "utils/cache";
 
-// Custom React Hook for fetching mechanism
-
+// Custom React Hook for fetching and caching single url results
 export function useFetch(url, deps = []) {
 
   const [data, setData] = useState(null);

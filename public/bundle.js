@@ -169,26 +169,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(7);
 /* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var babel_polyfill__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(9);
-/* harmony import */ var babel_polyfill__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(babel_polyfill__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var utils_favicon__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(341);
-/* harmony import */ var utils_favicon__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(utils_favicon__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(342);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(347);
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var typestyle__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(353);
-/* harmony import */ var _reach_router__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(360);
-/* harmony import */ var utils_values__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(375);
-/* harmony import */ var components_film__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(376);
-/* harmony import */ var components_home__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(405);
+/* harmony import */ var utils_favicon__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(9);
+/* harmony import */ var utils_favicon__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(utils_favicon__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(10);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(15);
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var typestyle__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(22);
+/* harmony import */ var _reach_router__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(29);
+/* harmony import */ var utils_values__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(44);
+/* harmony import */ var components_film__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(45);
+/* harmony import */ var components_home__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(74);
 
 
 
 
 
 // js modules
-
 
 
 
@@ -200,12 +197,25 @@ __webpack_require__.r(__webpack_exports__);
 
  // Only generic css needed
 
-Object(typestyle__WEBPACK_IMPORTED_MODULE_9__["cssRule"])("html, body", {
-  background: utils_values__WEBPACK_IMPORTED_MODULE_11__["colors"].charcoal,
+Object(typestyle__WEBPACK_IMPORTED_MODULE_8__["cssRule"])("html, body", {
+  background: utils_values__WEBPACK_IMPORTED_MODULE_10__["colors"].charcoal,
   margin: "0px",
-  color: utils_values__WEBPACK_IMPORTED_MODULE_11__["colors"].white
+  color: utils_values__WEBPACK_IMPORTED_MODULE_10__["colors"].white
+});
+Object(typestyle__WEBPACK_IMPORTED_MODULE_8__["cssRule"])("a", {
+  color: utils_values__WEBPACK_IMPORTED_MODULE_10__["colors"].whiskey,
+  textDecoration: "none",
+  $nest: {
+    "&:visited": {
+      color: utils_values__WEBPACK_IMPORTED_MODULE_10__["colors"].whiskey
+    },
+    "&:hover": {
+      color: utils_values__WEBPACK_IMPORTED_MODULE_10__["colors"].amber,
+      textDecoration: "underline"
+    }
+  }
 }); // Using classic React.Component as hooks doesn't have proper
-// setup for error boundry yet
+// support for error boundry yet
 
 var Wrapper =
 /*#__PURE__*/
@@ -226,35 +236,22 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_7__["createElement"](_reach_router__WEBPACK_IMPORTED_MODULE_10__["Router"], null, react__WEBPACK_IMPORTED_MODULE_7__["createElement"](components_home__WEBPACK_IMPORTED_MODULE_13__["Home"], {
+      return react__WEBPACK_IMPORTED_MODULE_6__["createElement"](_reach_router__WEBPACK_IMPORTED_MODULE_9__["Router"], null, react__WEBPACK_IMPORTED_MODULE_6__["createElement"](components_home__WEBPACK_IMPORTED_MODULE_12__["Home"], {
         path: "/"
-      }), react__WEBPACK_IMPORTED_MODULE_7__["createElement"](components_film__WEBPACK_IMPORTED_MODULE_12__["Film"], {
+      }), react__WEBPACK_IMPORTED_MODULE_6__["createElement"](components_film__WEBPACK_IMPORTED_MODULE_11__["Film"], {
         path: "films/:filmId"
       }));
     }
   }]);
 
   return Wrapper;
-}(react__WEBPACK_IMPORTED_MODULE_7__["Component"]);
+}(react__WEBPACK_IMPORTED_MODULE_6__["Component"]);
 
-Object(react_dom__WEBPACK_IMPORTED_MODULE_8__["render"])(react__WEBPACK_IMPORTED_MODULE_7__["createElement"](Wrapper, null), document.getElementById("root"));
-
-/***/ }),
-
-/***/ 341:
-/***/ (function(module, exports) {
-
-(function () {
-  var link = document.querySelector("link[rel*='icon']") || document.createElement('link');
-  link.type = 'image/x-icon';
-  link.rel = 'shortcut icon';
-  link.href = "/favicon-".concat(Math.floor(Math.random() * 9), ".ico");
-  document.getElementsByTagName('head')[0].appendChild(link);
-})();
+Object(react_dom__WEBPACK_IMPORTED_MODULE_7__["render"])(react__WEBPACK_IMPORTED_MODULE_6__["createElement"](Wrapper, null), document.getElementById("root"));
 
 /***/ }),
 
-/***/ 375:
+/***/ 44:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -270,34 +267,36 @@ var colors = {
   gray: "#262b2f",
   pale: "#D5D5D5",
   white: "#FFFFFF",
+  amber: "#DAB900",
+  whiskey: "#544700",
   transparent: "transparent"
 };
 
 /***/ }),
 
-/***/ 376:
+/***/ 45:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Film", function() { return Film; });
-/* harmony import */ var _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(377);
+/* harmony import */ var _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(46);
 /* harmony import */ var _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(342);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(10);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var lodash_sortby__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(381);
+/* harmony import */ var lodash_sortby__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(50);
 /* harmony import */ var lodash_sortby__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(lodash_sortby__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var pluralize__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(383);
+/* harmony import */ var pluralize__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(52);
 /* harmony import */ var pluralize__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(pluralize__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var hooks_fetch__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(384);
-/* harmony import */ var hooks_characters__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(390);
-/* harmony import */ var hooks_species__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(391);
-/* harmony import */ var utils_api__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(392);
-/* harmony import */ var styles_film__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(393);
-/* harmony import */ var widgets_plasma__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(396);
-/* harmony import */ var widgets_image__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(397);
-/* harmony import */ var visuals_back__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(398);
-/* harmony import */ var widgets_pulse__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(404);
+/* harmony import */ var hooks_fetch__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(53);
+/* harmony import */ var hooks_characters__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(59);
+/* harmony import */ var hooks_species__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(60);
+/* harmony import */ var utils_api__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(61);
+/* harmony import */ var widgets_plasma__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(62);
+/* harmony import */ var widgets_image__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(63);
+/* harmony import */ var visuals_back__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(66);
+/* harmony import */ var widgets_pulse__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(72);
+/* harmony import */ var styles_film__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(73);
 
 
 
@@ -311,22 +310,21 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var useState = react__WEBPACK_IMPORTED_MODULE_1__["useState"];
 
 function Character(_ref) {
   var character = _ref.character;
   var mass = character.mass === Infinity ? " - " : character.mass;
   var height = character.height === Infinity ? " - " : character.height;
-  return react__WEBPACK_IMPORTED_MODULE_1__["createElement"]("div", {
-    className: styles_film__WEBPACK_IMPORTED_MODULE_8__["_styles"].character
-  }, react__WEBPACK_IMPORTED_MODULE_1__["createElement"](widgets_image__WEBPACK_IMPORTED_MODULE_10__["Image"], {
+  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: styles_film__WEBPACK_IMPORTED_MODULE_12__["_styles"].character
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(widgets_image__WEBPACK_IMPORTED_MODULE_9__["Image"], {
     isCharacter: true,
     text: character.name
-  }), react__WEBPACK_IMPORTED_MODULE_1__["createElement"]("h4", null, character.name), react__WEBPACK_IMPORTED_MODULE_1__["createElement"]("h5", null, react__WEBPACK_IMPORTED_MODULE_1__["createElement"]("span", {
+  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h4", null, character.name), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h5", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
     title: "Mass"
-  }, mass, "kg"), " | ", react__WEBPACK_IMPORTED_MODULE_1__["createElement"]("span", {
+  }, mass, "kg"), " | ", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
     title: "Height"
-  }, height, "cm")), react__WEBPACK_IMPORTED_MODULE_1__["createElement"]("h5", {
+  }, height, "cm")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h5", {
     title: "Home world"
   }, "\u2302 ", character.homeworld));
 }
@@ -342,21 +340,21 @@ function Sortable(_ref2) {
     return direction === "asc" ? onDirectionChange("desc") : onDirectionChange("asc");
   };
 
-  return react__WEBPACK_IMPORTED_MODULE_1__["createElement"]("div", {
-    className: styles_film__WEBPACK_IMPORTED_MODULE_8__["_styles"].allSorts
-  }, react__WEBPACK_IMPORTED_MODULE_1__["createElement"]("div", {
-    className: styles_film__WEBPACK_IMPORTED_MODULE_8__["_styles"].sortWrapper
+  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: styles_film__WEBPACK_IMPORTED_MODULE_12__["_styles"].allSorts
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: styles_film__WEBPACK_IMPORTED_MODULE_12__["_styles"].sortWrapper
   }, options.map(function (o, i) {
-    return react__WEBPACK_IMPORTED_MODULE_1__["createElement"]("div", {
+    return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
       key: i,
       onClick: function onClick() {
         return onChange(o);
       },
-      className: styles_film__WEBPACK_IMPORTED_MODULE_8__["_styles"].sort(active === o)
+      className: styles_film__WEBPACK_IMPORTED_MODULE_12__["_styles"].sort(active === o)
     }, o);
-  })), react__WEBPACK_IMPORTED_MODULE_1__["createElement"]("div", {
+  })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     onClick: _onDirectionChange,
-    className: styles_film__WEBPACK_IMPORTED_MODULE_8__["_styles"].arrow
+    className: styles_film__WEBPACK_IMPORTED_MODULE_12__["_styles"].arrow
   }, direction === "asc" && "↑", direction === "desc" && "↓"));
 }
 
@@ -364,19 +362,19 @@ function CharacterList(_ref3) {
   var movie = _ref3.movie,
       setCharacters = _ref3.setCharacters;
 
-  var _useState = useState("name"),
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])("name"),
       _useState2 = _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0___default()(_useState, 2),
       sort = _useState2[0],
       setSort = _useState2[1];
 
-  var _useState3 = useState("asc"),
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])("asc"),
       _useState4 = _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0___default()(_useState3, 2),
       direction = _useState4[0],
       setDirection = _useState4[1];
 
-  var _getCharactersData = Object(hooks_characters__WEBPACK_IMPORTED_MODULE_5__["getCharactersData"])(movie),
-      charactersData = _getCharactersData.charactersData,
-      charactersLoading = _getCharactersData.charactersLoading; //  all the magic
+  var _useCharactersFetch = Object(hooks_characters__WEBPACK_IMPORTED_MODULE_5__["useCharactersFetch"])(movie),
+      charactersData = _useCharactersFetch.charactersData,
+      charactersLoading = _useCharactersFetch.charactersLoading; //  all the magic in there
 
 
   var _sortedChars = lodash_sortby__WEBPACK_IMPORTED_MODULE_2___default()(charactersData, function (o) {
@@ -386,24 +384,28 @@ function CharacterList(_ref3) {
   var _characters = direction === "desc" ? _sortedChars.reverse() : _sortedChars;
 
   if (charactersData.length) {
+    // SpeciesList (sibling) component relies on this data, so rather than introducing
+    // something like redux which would be overkill for one use case of this app,
+    // doing this neat trick where parent component will take care of passing it
+    // down to sibling component
     setCharacters(charactersData);
   }
 
-  return react__WEBPACK_IMPORTED_MODULE_1__["createElement"]("div", {
-    className: styles_film__WEBPACK_IMPORTED_MODULE_8__["_styles"].charactersWrapper
-  }, react__WEBPACK_IMPORTED_MODULE_1__["createElement"]("div", {
-    className: styles_film__WEBPACK_IMPORTED_MODULE_8__["_styles"].charactersTitle
-  }, react__WEBPACK_IMPORTED_MODULE_1__["createElement"]("h3", null, "Characters"), react__WEBPACK_IMPORTED_MODULE_1__["createElement"](widgets_pulse__WEBPACK_IMPORTED_MODULE_12__["Loading"], {
+  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: styles_film__WEBPACK_IMPORTED_MODULE_12__["_styles"].charactersWrapper
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: styles_film__WEBPACK_IMPORTED_MODULE_12__["_styles"].charactersTitle
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h3", null, "Characters"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(widgets_pulse__WEBPACK_IMPORTED_MODULE_11__["LoadingPulse"], {
     condition: charactersLoading
-  }), !!_characters.length && react__WEBPACK_IMPORTED_MODULE_1__["createElement"](Sortable, {
+  }), !!_characters.length && react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Sortable, {
     active: sort,
     onChange: setSort,
     onDirectionChange: setDirection,
     direction: direction
-  })), !!_characters.length && react__WEBPACK_IMPORTED_MODULE_1__["createElement"]("div", {
-    className: styles_film__WEBPACK_IMPORTED_MODULE_8__["_styles"].characters
+  })), !!_characters.length && react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: styles_film__WEBPACK_IMPORTED_MODULE_12__["_styles"].characters
   }, _characters.map(function (c, i) {
-    return react__WEBPACK_IMPORTED_MODULE_1__["createElement"](Character, {
+    return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Character, {
       key: i,
       character: c
     });
@@ -414,25 +416,26 @@ function SpeciesList(_ref4) {
   var movie = _ref4.movie,
       characters = _ref4.characters;
 
-  var _getSpeciesData = Object(hooks_species__WEBPACK_IMPORTED_MODULE_6__["getSpeciesData"])((movie || {}).species, characters),
-      speciesData = _getSpeciesData.speciesData,
-      speciesLoading = _getSpeciesData.speciesLoading;
+  var _useSpeciesFetch = Object(hooks_species__WEBPACK_IMPORTED_MODULE_6__["useSpeciesFetch"])((movie || {}).species, characters),
+      speciesData = _useSpeciesFetch.speciesData,
+      speciesLoading = _useSpeciesFetch.speciesLoading;
 
   if (speciesData && !speciesLoading) {
-    var _last = speciesData.pop();
+    var _last = speciesData.pop(); // because .... linguistic .... perfection
+
 
     var renderTupal = function renderTupal(s) {
       return pluralize__WEBPACK_IMPORTED_MODULE_3___default()(s.name.toLowerCase(), s.value, true);
     };
 
-    return react__WEBPACK_IMPORTED_MODULE_1__["createElement"]("div", {
-      className: styles_film__WEBPACK_IMPORTED_MODULE_8__["_styles"].speciesList
+    return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      className: styles_film__WEBPACK_IMPORTED_MODULE_12__["_styles"].speciesList
     }, "This movie has ", speciesData.map(function (s) {
       return renderTupal(s);
     }).join(", "), " and ", renderTupal(_last), ".");
   }
 
-  return react__WEBPACK_IMPORTED_MODULE_1__["createElement"](widgets_pulse__WEBPACK_IMPORTED_MODULE_12__["Loading"], {
+  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(widgets_pulse__WEBPACK_IMPORTED_MODULE_11__["LoadingPulse"], {
     condition: !!characters.length && speciesLoading
   });
 }
@@ -444,33 +447,33 @@ function Film(_ref5) {
       data = _useFetch.data,
       loading = _useFetch.loading;
 
-  var _useState5 = useState([]),
+  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])([]),
       _useState6 = _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0___default()(_useState5, 2),
       characters = _useState6[0],
       setCharacters = _useState6[1];
 
-  return react__WEBPACK_IMPORTED_MODULE_1__["createElement"]("div", {
-    className: styles_film__WEBPACK_IMPORTED_MODULE_8__["_styles"].wrapper
-  }, react__WEBPACK_IMPORTED_MODULE_1__["createElement"](widgets_plasma__WEBPACK_IMPORTED_MODULE_9__["Loading"], {
+  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: styles_film__WEBPACK_IMPORTED_MODULE_12__["_styles"].wrapper
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(widgets_plasma__WEBPACK_IMPORTED_MODULE_8__["LoadingSaber"], {
     condition: loading
-  }), data && react__WEBPACK_IMPORTED_MODULE_1__["createElement"](react__WEBPACK_IMPORTED_MODULE_1__["Fragment"], null, react__WEBPACK_IMPORTED_MODULE_1__["createElement"]("div", {
-    className: styles_film__WEBPACK_IMPORTED_MODULE_8__["_styles"].left
-  }, react__WEBPACK_IMPORTED_MODULE_1__["createElement"](visuals_back__WEBPACK_IMPORTED_MODULE_11__["BackButton"], null)), react__WEBPACK_IMPORTED_MODULE_1__["createElement"]("div", {
-    className: styles_film__WEBPACK_IMPORTED_MODULE_8__["_styles"].right
-  }, react__WEBPACK_IMPORTED_MODULE_1__["createElement"]("div", {
-    className: styles_film__WEBPACK_IMPORTED_MODULE_8__["_styles"].headerWrapper
-  }, react__WEBPACK_IMPORTED_MODULE_1__["createElement"]("div", {
-    className: styles_film__WEBPACK_IMPORTED_MODULE_8__["_styles"].image
-  }, react__WEBPACK_IMPORTED_MODULE_1__["createElement"](widgets_image__WEBPACK_IMPORTED_MODULE_10__["Image"], {
+  }), data && react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: styles_film__WEBPACK_IMPORTED_MODULE_12__["_styles"].left
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(visuals_back__WEBPACK_IMPORTED_MODULE_10__["BackButton"], null)), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: styles_film__WEBPACK_IMPORTED_MODULE_12__["_styles"].right
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: styles_film__WEBPACK_IMPORTED_MODULE_12__["_styles"].headerWrapper
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: styles_film__WEBPACK_IMPORTED_MODULE_12__["_styles"].image
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(widgets_image__WEBPACK_IMPORTED_MODULE_9__["Image"], {
     text: data.title
-  })), react__WEBPACK_IMPORTED_MODULE_1__["createElement"]("div", {
-    className: styles_film__WEBPACK_IMPORTED_MODULE_8__["_styles"].content
-  }, react__WEBPACK_IMPORTED_MODULE_1__["createElement"]("div", null, react__WEBPACK_IMPORTED_MODULE_1__["createElement"]("h1", null, data.title), react__WEBPACK_IMPORTED_MODULE_1__["createElement"]("h4", {
-    className: styles_film__WEBPACK_IMPORTED_MODULE_8__["_styles"].sub
-  }, react__WEBPACK_IMPORTED_MODULE_1__["createElement"]("span", null, "Episode ", data.episode_id), react__WEBPACK_IMPORTED_MODULE_1__["createElement"]("span", null, "Release on ", data.release_date), react__WEBPACK_IMPORTED_MODULE_1__["createElement"]("span", null, "Directed by ", data.director))), react__WEBPACK_IMPORTED_MODULE_1__["createElement"](SpeciesList, {
+  })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: styles_film__WEBPACK_IMPORTED_MODULE_12__["_styles"].content
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h1", null, data.title), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h4", {
+    className: styles_film__WEBPACK_IMPORTED_MODULE_12__["_styles"].sub
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", null, "Episode ", data.episode_id), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", null, "Release on ", data.release_date), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", null, "Directed by ", data.director))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(SpeciesList, {
     movie: data,
     characters: characters
-  }))), react__WEBPACK_IMPORTED_MODULE_1__["createElement"](CharacterList, {
+  }))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(CharacterList, {
     movie: data,
     setCharacters: setCharacters
   }))));
@@ -478,26 +481,26 @@ function Film(_ref5) {
 
 /***/ }),
 
-/***/ 384:
+/***/ 53:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useFetch", function() { return useFetch; });
-/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(385);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(54);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(387);
+/* harmony import */ var _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(56);
 /* harmony import */ var _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(377);
+/* harmony import */ var _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(46);
 /* harmony import */ var _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(342);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(10);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var utils_cache__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(388);
+/* harmony import */ var utils_cache__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(57);
 
 
 
 
- // Custom React Hook for fetching mechanism
+ // Custom React Hook for fetching and caching single url results
 
 function useFetch(url) {
   var deps = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : [];
@@ -579,7 +582,7 @@ function useFetch(url) {
 
 /***/ }),
 
-/***/ 388:
+/***/ 57:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -587,13 +590,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getCachedResult", function() { return getCachedResult; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "cacheResult", function() { return cacheResult; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchAndCacheResult", function() { return fetchAndCacheResult; });
-/* harmony import */ var utils_values__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(375);
-/* harmony import */ var localstorage_fifo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(389);
+/* harmony import */ var utils_values__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(44);
+/* harmony import */ var localstorage_fifo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(58);
 
 
 var cache = new localstorage_fifo__WEBPACK_IMPORTED_MODULE_1__["default"]({
   namespace: 'darth'
-}); // Simple local storage caching system
+}); // Simple yet robust local storage caching system
 
 function getCachedResult(url) {
   return cache.get(encodeURI(url));
@@ -621,21 +624,21 @@ function fetchAndCacheResult(url) {
 
 /***/ }),
 
-/***/ 390:
+/***/ 59:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getCharactersData", function() { return getCharactersData; });
-/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(385);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useCharactersFetch", function() { return useCharactersFetch; });
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(54);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(387);
+/* harmony import */ var _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(56);
 /* harmony import */ var _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(377);
+/* harmony import */ var _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(46);
 /* harmony import */ var _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(342);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(10);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var utils_cache__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(388);
+/* harmony import */ var utils_cache__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(57);
 
 
 
@@ -654,9 +657,20 @@ function getUniqueHomes(characters) {
 
 function cleanValue(value) {
   return value === "unknown" ? Infinity : parseFloat(value.replace(",", ""));
-}
+} // This is responsible for getting data for all the characters in a movie (parallel fetching)
+// + finding unique home types from the those results
+// + fetching deatails of these homes (parallel fetching)
+// + constructing following structure to be used later on for rendering
+// [{
+//   name,
+//   homeworld,
+//   mass,
+//   height,
+//   species
+// }]
 
-function getCharactersData() {
+
+function useCharactersFetch() {
   var _movie = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
 
   var movie = _movie || {};
@@ -747,33 +761,38 @@ function getCharactersData() {
 
 /***/ }),
 
-/***/ 391:
+/***/ 60:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getSpeciesData", function() { return getSpeciesData; });
-/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(385);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useSpeciesFetch", function() { return useSpeciesFetch; });
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(54);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(387);
+/* harmony import */ var _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(56);
 /* harmony import */ var _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(377);
+/* harmony import */ var _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(46);
 /* harmony import */ var _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(342);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(10);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var utils_cache__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(388);
+/* harmony import */ var utils_cache__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(57);
 
 
 
 
+ // Responsible for fetching all the species and based on previously fetched
+// character details, counts the number of each species in that list
+// returning following format for ease of rendering
+// [{
+//   name: "Humans",
+//   value: 3
+// }]
 
-function getSpeciesData() {
+function useSpeciesFetch() {
   var speciesUrls = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
 
   var _charactersData = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : [];
 
-  // const movie = (_movie || {});
-  // const speciesUrls = movie.species || [];
   var charactersData = _charactersData || [];
 
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_3__["useState"])(null),
@@ -787,12 +806,12 @@ function getSpeciesData() {
       setSpeciesLoading = _useState4[1];
 
   Object(react__WEBPACK_IMPORTED_MODULE_3__["useEffect"])(function () {
-    function getSpeciesData() {
-      return _getSpeciesData.apply(this, arguments);
+    function useSpeciesDataFetch() {
+      return _useSpeciesDataFetch.apply(this, arguments);
     }
 
-    function _getSpeciesData() {
-      _getSpeciesData = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1___default()(
+    function _useSpeciesDataFetch() {
+      _useSpeciesDataFetch = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1___default()(
       /*#__PURE__*/
       _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
         var _speciesPromises, _speciesResults, _data;
@@ -833,10 +852,10 @@ function getSpeciesData() {
           }
         }, _callee);
       }));
-      return _getSpeciesData.apply(this, arguments);
+      return _useSpeciesDataFetch.apply(this, arguments);
     }
 
-    getSpeciesData(_charactersData);
+    useSpeciesDataFetch(_charactersData);
   }, [_charactersData, charactersData, speciesUrls]);
   return {
     speciesData: speciesData,
@@ -846,7 +865,7 @@ function getSpeciesData() {
 
 /***/ }),
 
-/***/ 392:
+/***/ 61:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -873,16 +892,302 @@ var api = {
 
 /***/ }),
 
-/***/ 393:
+/***/ 62:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoadingSaber", function() { return LoadingSaber; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(10);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var typestyle__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(22);
+/* harmony import */ var utils_values__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(44);
+
+
+ // pure css implementation of lightsaber gif
+// this block is taken from https://codepen.io/ncerminara/pen/KzurJ?editors=1100
+// and modified to be animated
+
+Object(typestyle__WEBPACK_IMPORTED_MODULE_1__["cssRaw"])("\n\t.lightsaber { \n\t\tposition: relative;\n\t\theight: 270px;\n\t}\n\n\t.lightsaber label {\n\t\tcursor: pointer;\n\t\tposition: absolute;\n\t\tbottom: 0;\n\t\tleft: 0;\n\t\tz-index: 88;\n\t\ttext-indent: -9999px;\n\t\twidth: 15px;\n\t\theight: 50px;\n\t\tborder-bottom: solid 4px grey;\n\t\tborder-top: solid 5px grey;\n\t\tborder-radius: 5px;\n\t\t-moz-border-radius: 5px;\n\t\t-webkit-border-radius: 5px;\n\t\t-o-border-radius: 5px;\n\t\t-ms-border-radius: 5px;\n\t\tbackground: rgb(226,226,226); /* Old browsers */\n\t\tbackground: linear-gradient(to right, rgba(226,226,226,1) 0%,rgba(219,219,219,1) 50%,rgba(209,209,209,1) 51%,rgba(254,254,254,1) 100%); /* W3C */\n\t\tbackground: -moz-linear-gradient(left, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 50%, rgba(209,209,209,1) 51%, rgba(254,254,254,1) 100%); /* FF3.6+ */\n\t\tbackground: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(226,226,226,1)), color-stop(50%,rgba(219,219,219,1)), color-stop(51%,rgba(209,209,209,1)), color-stop(100%,rgba(254,254,254,1))); /* Chrome,Safari4+ */\n\t\tbackground: -webkit-linear-gradient(left, rgba(226,226,226,1) 0%,rgba(219,219,219,1) 50%,rgba(209,209,209,1) 51%,rgba(254,254,254,1) 100%); /* Chrome10+,Safari5.1+ */\n\t\tbackground: -o-linear-gradient(left, rgba(226,226,226,1) 0%,rgba(219,219,219,1) 50%,rgba(209,209,209,1) 51%,rgba(254,254,254,1) 100%); /* Opera 11.10+ */\n\t\tbackground: -ms-linear-gradient(left, rgba(226,226,226,1) 0%,rgba(219,219,219,1) 50%,rgba(209,209,209,1) 51%,rgba(254,254,254,1) 100%); /* IE10+ */\n\t\tfilter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', endColorstr='#fefefe',GradientType=1 ); /* IE6-9 */\n\t}\n\n\t.lightsaber .switch {\n\t\tbackground: #B94A37;\n\t\twidth: 5px;\n\t\theight: 10px;\n\t\tdisplay: block;\n\t\tposition: absolute;\n\t\tbottom: 25px;\n\t\tleft: 13px;\n\t\ttransition: left 200ms;\n\t\t-moz-transition: left 200ms;\n\t\t-webkit-transition: left 200ms;\n\t\t-o-transition: left 200ms;\n\t\t-ms-transition: left 200ms;\n\t\tborder-radius: 10px;\n\t\t-moz-border-radius: 10px;\n\t\t-webkit-border-radius: 10px;\n\t\t-o-border-radius: 10px;\n\t\t-ms-border-radius: 10px;\n\t}\n\n\t.lightsaber input[type=checkbox] {\n\t\tposition: absolute;\n\t\tbottom: 0;\n\t\tleft: 0;\n\t\topacity: 0;\n\t\t-moz-opacity: 0;\n\t\t-webkit-opacity: 0;\n\t\t-o-opacity: 0;\n\t\t-ms-opacity: 0;\n\t\tz-index: 77;\n\t}\n\n\t.lightsaber .plasma {\n\t\ttransition: height 300ms,;\n\t\t-moz-transition: height 300ms;\n\t\t-webkit-transition: height 300ms;\n\t\t-o-transition: height 300ms;\n\t\t-ms-transition: height 300ms;\n\t\tborder-radius: 12px 12px 0 0;\n\t\tposition: absolute;\n\t\tbottom: 55px;\n\t\tleft: 2px;\n\t\twidth: 10px;\n\t\tdisplay: block;\n\t\tfilter: blur(1px);\n\t\t-moz-filter: blur(1px);\n\t\t-webkit-filter: blur(1px);\n\t\t-o-filter: blur(1px);\n\t\t-ms-filter: blur(1px);\n\t\theight: 0;\n\t}\n\n\n\t.lightsaber input[type=checkbox]:checked ~ div.plasma {\n\t\theight: 250px;\n\t}\n\n\t.lightsaber input[type=checkbox]:hover ~ div.switch {\n\t\tbackground: #c09853;\n\t\tleft: 12px;\n\t}\n\n\t.lightsaber input[type=checkbox]:checked ~ div.switch {\n\t\tbackground: #468847;\n\t}\n\n\t.yoda {\n\t\tbackground: rgb(135,220,90); /* Old browsers */\n\t\tbackground: linear-gradient(to right, rgb(135,220,90) 0%,rgb(254,254,254) 30%,rgb(254,254,254) 50%,rgb(254,254,254) 70%,rgb(135,220,90) 100%); /* W3C */\n\t\tbackground: -moz-linear-gradient(left, rgb(135,220,90) 0%, rgb(254,254,254) 30%, rgb(254,254,254) 50%, rgb(254,254,254) 70%, rgb(135,220,90) 100%); /* FF3.6+ */\n\t\tbackground: -webkit-gradient(linear, left top, right top, color-stop(0%,rgb(135,220,90)), color-stop(30%,rgb(254,254,254)), color-stop(50%,rgb(254,254,254)), color-stop(70%,rgb(254,254,254)), color-stop(100%,rgb(135,220,90))); /* Chrome,Safari4+ */\n\t\tbackground: -webkit-linear-gradient(left, rgb(135,220,90) 0%,rgb(254,254,254) 30%,rgb(254,254,254) 50%,rgb(254,254,254) 70%,rgb(135,220,90) 100%); /* Chrome10+,Safari5.1+ */\n\t\tbackground: -o-linear-gradient(left, rgb(135,220,90) 0%,rgb(254,254,254) 30%,rgb(254,254,254) 50%,rgb(254,254,254) 70%,rgb(135,220,90) 100%); /* Opera 11.10+ */\n\t\tbackground: -ms-linear-gradient(left, rgb(135,220,90) 0%,rgb(254,254,254) 30%,rgb(254,254,254) 50%,rgb(254,254,254) 70%,rgb(135,220,90) 100%); /* IE10+ */\n\t\tfilter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#87dc5a', endColorstr='#87dc5a',GradientType=1 ); /* IE6-9 */\n\t\tanimation-name: yoda;\n\t\t-moz-animation-name: yoda;\n\t\t-webkit-animation-name: yoda;\n\t\t-o-animation-name: yoda;\n\t\t-ms-animation-name: yoda;\n\t\tanimation-duration: 1.5s;\n\t\t-moz-animation-duration: 1.5s;\n\t\t-webkit-animation-duration: 1.5s;\n\t\t-o-animation-duration: 1.5s;\n\t\t-ms-animation-duration: 1.5s;\n\t\tanimation-iteration-count: infinite;\n\t\t-moz-animation-iteration-count: infinite;\n\t\t-webkit-animation-iteration-count: infinite;\n\t\t-o-animation-iteration-count: infinite;\n\t\t-ms-animation-iteration-count: infinite;\n\t}\n\n\t.vader {\n\t\tbackground: rgb(229,17,21); /* Old browsers */\n\t\tbackground: linear-gradient(to right, rgba(229,17,21,1) 0%,rgba(254,254,254,1) 30%,rgba(254,254,254,1) 47%,rgba(254,254,254,1) 71%,rgba(229,17,21,1) 100%); /* W3C */\n\t\tbackground: -moz-linear-gradient(left, rgba(229,17,21,1) 0%, rgba(254,254,254,1) 30%, rgba(254,254,254,1) 47%, rgba(254,254,254,1) 71%, rgba(229,17,21,1) 100%); /* FF3.6+ */\n\t\tbackground: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(229,17,21,1)), color-stop(30%,rgba(254,254,254,1)), color-stop(47%,rgba(254,254,254,1)), color-stop(71%,rgba(254,254,254,1)), color-stop(100%,rgba(229,17,21,1))); /* Chrome,Safari4+ */\n\t\tbackground: -webkit-linear-gradient(left, rgba(229,17,21,1) 0%,rgba(254,254,254,1) 30%,rgba(254,254,254,1) 47%,rgba(254,254,254,1) 71%,rgba(229,17,21,1) 100%); /* Chrome10+,Safari5.1+ */\n\t\tbackground: -o-linear-gradient(left, rgba(229,17,21,1) 0%,rgba(254,254,254,1) 30%,rgba(254,254,254,1) 47%,rgba(254,254,254,1) 71%,rgba(229,17,21,1) 100%); /* Opera 11.10+ */\n\t\tbackground: -ms-linear-gradient(left, rgba(229,17,21,1) 0%,rgba(254,254,254,1) 30%,rgba(254,254,254,1) 47%,rgba(254,254,254,1) 71%,rgba(229,17,21,1) 100%); /* IE10+ */\n\t\tfilter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e51115', endColorstr='#e51115',GradientType=1 ); /* IE6-9 */\n\t\tanimation-name: vader;\n\t\t-moz-animation-name: vader;\n\t\t-webkit-animation-name: vader;\n\t\t-o-animation-name: vader;\n\t\t-ms-animation-name: vader;\n\t\tanimation-duration: 1.5s;\n\t\t-moz-animation-duration: 1.5s;\n\t\t-webkit-animation-duration: 1.5s;\n\t\t-o-animation-duration: 1.5s;\n\t\t-ms-animation-duration: 1.5s;\n\t\tanimation-iteration-count: infinite;\n\t\t-moz-animation-iteration-count: infinite;\n\t\t-webkit-animation-iteration-count: infinite;\n\t\t-o-animation-iteration-count: infinite;\n\t\t-ms-animation-iteration-count: infinite;\n\t}\n\n\t.windu {\n\t\tbackground: rgb(202,116,221); /* Old browsers */\n\t\tbackground: linear-gradient(to right, rgba(202,116,221,1) 0%,rgba(254,254,254,1) 30%,rgba(254,254,254,1) 47%,rgba(254,254,254,1) 71%,rgba(202,116,221,1) 100%); /* W3C */\n\t\tbackground: -moz-linear-gradient(left, rgba(202,116,221,1) 0%, rgba(254,254,254,1) 30%, rgba(254,254,254,1) 47%, rgba(254,254,254,1) 71%, rgba(202,116,221,1) 100%); /* FF3.6+ */\n\t\tbackground: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(202,116,221,1)), color-stop(30%,rgba(254,254,254,1)), color-stop(47%,rgba(254,254,254,1)), color-stop(71%,rgba(254,254,254,1)), color-stop(100%,rgba(202,116,221,1))); /* Chrome,Safari4+ */\n\t\tbackground: -webkit-linear-gradient(left, rgba(202,116,221,1) 0%,rgba(254,254,254,1) 30%,rgba(254,254,254,1) 47%,rgba(254,254,254,1) 71%,rgba(202,116,221,1) 100%); /* Chrome10+,Safari5.1+ */\n\t\tbackground: -o-linear-gradient(left, rgba(202,116,221,1) 0%,rgba(254,254,254,1) 30%,rgba(254,254,254,1) 47%,rgba(254,254,254,1) 71%,rgba(202,116,221,1) 100%); /* Opera 11.10+ */\n\t\tbackground: -ms-linear-gradient(left, rgba(202,116,221,1) 0%,rgba(254,254,254,1) 30%,rgba(254,254,254,1) 47%,rgba(254,254,254,1) 71%,rgba(202,116,221,1) 100%); /* IE10+ */\n\t\tfilter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ca74dd', endColorstr='#ca74dd',GradientType=1 ); /* IE6-9 */\n\t\tanimation-name: windu;\n\t\t-moz-animation-name: windu;\n\t\t-webkit-animation-name: windu;\n\t\t-o-animation-name: windu;\n\t\t-ms-animation-name: windu;\n\t\tanimation-duration: 1.5s;\n\t\t-moz-animation-duration: 1.5s;\n\t\t-webkit-animation-duration: 1.5s;\n\t\t-o-animation-duration: 1.5s;\n\t\t-ms-animation-duration: 1.5s;\n\t\tanimation-iteration-count: infinite;\n\t\t-moz-animation-iteration-count: infinite;\n\t\t-webkit-animation-iteration-count: infinite;\n\t\t-o-animation-iteration-count: infinite;\n\t\t-ms-animation-iteration-count: infinite;\n\t}\n\n\t.obi-wan {\n\t\tbackground: rgb(55,132,214); /* Old browsers */\n\t\tbackground: linear-gradient(to right, rgba(55,132,214,1) 0%,rgba(254,254,254,1) 30%,rgba(254,254,254,1) 47%,rgba(254,254,254,1) 71%,rgba(55,132,214,1) 100%); /* W3C */\n\t\tbackground: -moz-linear-gradient(left, rgba(55,132,214,1) 0%, rgba(254,254,254,1) 30%, rgba(254,254,254,1) 47%, rgba(254,254,254,1) 71%, rgba(55,132,214,1) 100%); /* FF3.6+ */\n\t\tbackground: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(55,132,214,1)), color-stop(30%,rgba(254,254,254,1)), color-stop(47%,rgba(254,254,254,1)), color-stop(71%,rgba(254,254,254,1)), color-stop(100%,rgba(55,132,214,1))); /* Chrome,Safari4+ */\n\t\tbackground: -webkit-linear-gradient(left, rgba(55,132,214,1) 0%,rgba(254,254,254,1) 30%,rgba(254,254,254,1) 47%,rgba(254,254,254,1) 71%,rgba(55,132,214,1) 100%); /* Chrome10+,Safari5.1+ */\n\t\tbackground: -o-linear-gradient(left, rgba(55,132,214,1) 0%,rgba(254,254,254,1) 30%,rgba(254,254,254,1) 47%,rgba(254,254,254,1) 71%,rgba(55,132,214,1) 100%); /* Opera 11.10+ */\n\t\tbackground: -ms-linear-gradient(left, rgba(55,132,214,1) 0%,rgba(254,254,254,1) 30%,rgba(254,254,254,1) 47%,rgba(254,254,254,1) 71%,rgba(55,132,214,1) 100%); /* IE10+ */\n\t\tfilter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3784d6', endColorstr='#3784d6',GradientType=1 ); /* IE6-9 */\n\t\tanimation-name: obi-wan;\n\t\t-moz-animation-name: obi-wan;\n\t\t-webkit-animation-name: obi-wan;\n\t\t-o-animation-name: obi-wan;\n\t\t-ms-animation-name: obi-wan;\n\t\tanimation-duration: 1.5s;\n\t\t-moz-animation-duration: 1.5s;\n\t\t-webkit-animation-duration: 1.5s;\n\t\t-o-animation-duration: 1.5s;\n\t\t-ms-animation-duration: 1.5s;\n\t\tanimation-iteration-count: infinite;\n\t\t-moz-animation-iteration-count: infinite;\n\t\t-webkit-animation-iteration-count: infinite;\n\t\t-o-animation-iteration-count: infinite;\n\t\t-ms-animation-iteration-count: infinite;\n\t}\n\n\tdiv {\n\t\t-webkit-transform : translateZ(0); \n\t\t-o-transform : translateZ(0); \n\t\t-moz-transform : translateZ(0); \n\t\ttransform : translateZ(0); \n\t}\n\n\t/* Animations */\n\t@keyframes yoda {\n\t\tfrom { box-shadow: 0 0 0px #7EC855;  height: 0px; }\n\t\t50% { box-shadow: 0 0 25px #7EC855; height: 270px; }\n\t\tto { box-shadow: 0 0 0px #7EC855;  height: 0px; }\n\t}\n\t@-moz-keyframes yoda {\n\t\tfrom { box-shadow: 0 0 0px #7EC855;  height: 0px; }\n\t\t50% { box-shadow: 0 0 25px #7EC855; height: 270px; }\n\t\tto { box-shadow: 0 0 0px #7EC855;  height: 0px; }\n\t}\n\t@-webkit-keyframes yoda {\n\t\tfrom { box-shadow: 0 0 0px #7EC855;  height: 0px; }\n\t\t50% { box-shadow: 0 0 25px #7EC855; height: 270px; }\n\t\tto { box-shadow: 0 0 0px #7EC855;  height: 0px; }\n\t}\n\t@-o-keyframes yoda {\n\t\tfrom { box-shadow: 0 0 0px #7EC855;  height: 0px; }\n\t\t50% { box-shadow: 0 0 25px #7EC855; height: 270px; }\n\t\tto { box-shadow: 0 0 0px #7EC855;  height: 0px; }\n\t}\n\t@-ms-keyframes yoda {\n\t\tfrom { box-shadow: 0 0 0px #7EC855;  height: 0px; }\n\t\t50% { box-shadow: 0 0 25px #7EC855; height: 270px; }\n\t\tto { box-shadow: 0 0 0px #7EC855;  height: 0px; }\n\t}\n\n\t@keyframes vader {\n\t\tfrom { box-shadow: 0 0 0px #e51115; height: 0; }\n\t\t50% { box-shadow: 0 0 25px #e51115; height: 270; }\n\t\tto { box-shadow: 0 0 0px #e51115; height: 0; }\n\t}\n\t@-moz-keyframes vader {\n\t\tfrom { box-shadow: 0 0 0px #e51115; height: 0; }\n\t\t50% { box-shadow: 0 0 25px #e51115; height: 270; }\n\t\tto { box-shadow: 0 0 0px #e51115; height: 0; }\n\t}\n\t@-webkit-keyframes vader {\n\t\tfrom { box-shadow: 0 0 0px #e51115; height: 0; }\n\t\t50% { box-shadow: 0 0 25px #e51115; height: 270; }\n\t\tto { box-shadow: 0 0 0px #e51115; height: 0; }\n\t}\n\t@-o-keyframes vader {\n\t\tfrom { box-shadow: 0 0 0px #e51115; height: 0; }\n\t\t50% { box-shadow: 0 0 25px #e51115; height: 270; }\n\t\tto { box-shadow: 0 0 0px #e51115; height: 0; }\n\t}\n\t@-ms-keyframes vader {\n\t\tfrom { box-shadow: 0 0 0px #e51115; height: 0; }\n\t\t50% { box-shadow: 0 0 25px #e51115; height: 270; }\n\t\tto { box-shadow: 0 0 0px #e51115; height: 0; }\n\t}\n\n\t@keyframes windu {\n\t\tfrom { box-shadow: 0 0 0px #ca74dd; height: 0px; }\n\t\t50% { box-shadow: 0 0 25px #ca74dd; height: 270; }\n\t\tto { box-shadow: 0 0 0px #ca74dd; height: 0px; }\n\t}\n\t@-moz-keyframes windu {\n\t\tfrom { box-shadow: 0 0 0px #ca74dd; height: 0px; }\n\t\t50% { box-shadow: 0 0 25px #ca74dd; height: 270; }\n\t\tto { box-shadow: 0 0 0px #ca74dd; height: 0px; }\n\t}\n\t@-webkit-keyframes windu {\n\t\tfrom { box-shadow: 0 0 0px #ca74dd; height: 0px; }\n\t\t50% { box-shadow: 0 0 25px #ca74dd; height: 270; }\n\t\tto { box-shadow: 0 0 0px #ca74dd; height: 0px; }\n\t}\n\t@-o-keyframes windu {\n\t\tfrom { box-shadow: 0 0 0px #ca74dd; height: 0px; }\n\t\t50% { box-shadow: 0 0 25px #ca74dd; height: 270; }\n\t\tto { box-shadow: 0 0 0px #ca74dd; height: 0px; }\n\t}\n\t@-ms-keyframes windu {\n\t\tfrom { box-shadow: 0 0 0px #ca74dd; height: 0px; }\n\t\t50% { box-shadow: 0 0 25px #ca74dd; height: 270; }\n\t\tto { box-shadow: 0 0 0px #ca74dd; height: 0px; }\n\t}\n\n\t@keyframes obi-wan {\n\t\tfrom { box-shadow: 0 0 0px #3784d6; height: 0px; }\n\t\t50% { box-shadow: 0 0 25px #3784d6; height: 270; }\n\t\tto { box-shadow: 0 0 0px #3784d6; height: 0px; }\n\t}\n\t@-moz-keyframes obi-wan {\n\t\tfrom { box-shadow: 0 0 0px #3784d6; height: 0px; }\n\t\t50% { box-shadow: 0 0 25px #3784d6; height: 270; }\n\t\tto { box-shadow: 0 0 0px #3784d6; height: 0px; }\n\t}\n\t@-webkit-keyframes obi-wan {\n\t\tfrom { box-shadow: 0 0 0px #3784d6; height: 0px; }\n\t\t50% { box-shadow: 0 0 25px #3784d6; height: 270; }\n\t\tto { box-shadow: 0 0 0px #3784d6; height: 0px; }\n\t}\n\t@-o-keyframes obi-wan {\n\t\tfrom { box-shadow: 0 0 0px #3784d6; height: 0px; }\n\t\t50% { box-shadow: 0 0 25px #3784d6; height: 270; }\n\t\tto { box-shadow: 0 0 0px #3784d6; height: 0px; }\n\t}\n\t@-ms-keyframes obi-wan {\n\t\tfrom { box-shadow: 0 0 0px #3784d6; height: 0px; }\n\t\t50% { box-shadow: 0 0 25px #3784d6; height: 270; }\n\t\tto { box-shadow: 0 0 0px #3784d6; height: 0px; }\n\t}\n\n");
+
+var _styles = Object(typestyle__WEBPACK_IMPORTED_MODULE_1__["stylesheet"])({
+  wrapper: {
+    left: "0px",
+    top: "0px",
+    height: "100vh",
+    width: "100%",
+    position: "fixed",
+    background: utils_values__WEBPACK_IMPORTED_MODULE_2__["colors"].dark,
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center"
+  }
+});
+
+function LoadingSaber(_ref) {
+  var condition = _ref.condition;
+  var plasmas = ["yoda", "obi-wan", "vader", "windu"];
+  var random = plasmas[Math.floor(Math.random() * plasmas.length)];
+  return condition && react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", {
+    className: _styles.wrapper
+  }, react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", {
+    className: "lightsaber"
+  }, react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("label", null), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("input", {
+    type: "checkbox",
+    defaultChecked: true
+  }), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", {
+    className: "switch"
+  }), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", {
+    className: "plasma ".concat(random)
+  })));
+}
+
+/***/ }),
+
+/***/ 63:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Image", function() { return Image; });
+/* harmony import */ var _babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(64);
+/* harmony import */ var _babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(10);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var typestyle__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(22);
+/* harmony import */ var widgets_pulse__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(72);
+/* harmony import */ var hooks_fetch__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(53);
+/* harmony import */ var utils_api__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(61);
+/* harmony import */ var utils_values__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(44);
+
+
+
+ // helpers
+
+ // static values
+
+
+
+
+var _styles = _babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_0___default()({
+  placeholder: function placeholder(isCharacter) {
+    var _s = {
+      display: "flex",
+      justifyContent: "center",
+      flexDirection: "column",
+      color: utils_values__WEBPACK_IMPORTED_MODULE_6__["colors"].gray,
+      background: utils_values__WEBPACK_IMPORTED_MODULE_6__["colors"].charcoal,
+      height: "152px"
+    };
+
+    if (!isCharacter) {
+      _s = _babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_0___default()({}, _s, {
+        height: "250px",
+        background: utils_values__WEBPACK_IMPORTED_MODULE_6__["colors"].dark
+      });
+    }
+
+    return Object(typestyle__WEBPACK_IMPORTED_MODULE_2__["style"])(_s);
+  }
+}, Object(typestyle__WEBPACK_IMPORTED_MODULE_2__["stylesheet"])({
+  image: {
+    height: "inherit",
+    width: "100%",
+    borderRadius: "7px",
+    textAlign: "center"
+  },
+  thumb: {
+    background: utils_values__WEBPACK_IMPORTED_MODULE_6__["colors"].charcoal,
+    height: "150px",
+    width: "100px",
+    objectFit: "cover",
+    borderRadius: "5px"
+  },
+  placeholderText: {
+    padding: "0px 10px"
+  }
+})); // It renders an empty box >> hits our express app to get link to the image >> renders the image
+// these calls to the express app are also cached for time specified.
+
+
+function Image(_ref) {
+  var text = _ref.text,
+      isCharacter = _ref.isCharacter;
+
+  var _url = isCharacter ? utils_api__WEBPACK_IMPORTED_MODULE_5__["api"].character(text) : utils_api__WEBPACK_IMPORTED_MODULE_5__["api"].poster(text);
+
+  var _isSurged = true;
+
+  var _placeholder = _isSurged ? react__WEBPACK_IMPORTED_MODULE_1__["createElement"]("a", {
+    href: "https://obi-van.herokuapp.com/"
+  }, "Go to fun version") : react__WEBPACK_IMPORTED_MODULE_1__["createElement"](widgets_pulse__WEBPACK_IMPORTED_MODULE_3__["LoadingPulse"], {
+    condition: true
+  });
+
+  var _className = isCharacter ? _styles.thumb : _styles.image;
+
+  if (!_isSurged) {
+    var _useFetch = Object(hooks_fetch__WEBPACK_IMPORTED_MODULE_4__["useFetch"])(_url, [text]),
+        data = _useFetch.data,
+        loading = _useFetch.loading;
+
+    if (!loading && data && !_isSurged) {
+      return react__WEBPACK_IMPORTED_MODULE_1__["createElement"]("img", {
+        src: data.value,
+        className: _className
+      });
+    }
+  }
+
+  return react__WEBPACK_IMPORTED_MODULE_1__["createElement"]("div", {
+    className: Object(typestyle__WEBPACK_IMPORTED_MODULE_2__["classes"])(_className, _styles.placeholder(isCharacter))
+  }, react__WEBPACK_IMPORTED_MODULE_1__["createElement"]("div", {
+    className: _styles.placeholderText
+  }, _placeholder));
+}
+
+/***/ }),
+
+/***/ 66:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BackButton", function() { return BackButton; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(10);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var typestyle_lib_index__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(67);
+/* harmony import */ var typestyle_lib_index__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(typestyle_lib_index__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var utils_api__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(61);
+/* harmony import */ var utils_values__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(44);
+/* harmony import */ var _reach_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(29);
+
+
+
+
+
+
+var _styles = Object(typestyle_lib_index__WEBPACK_IMPORTED_MODULE_1__["stylesheet"])({
+  back: {
+    width: "50px",
+    transform: "rotate(270deg)",
+    margin: "35% auto",
+    cursor: "pointer",
+    paddingTop: "15px"
+  },
+  falconLines: {
+    fill: utils_values__WEBPACK_IMPORTED_MODULE_3__["colors"].pale,
+    $nest: {
+      "&:hover": {
+        fill: utils_values__WEBPACK_IMPORTED_MODULE_3__["colors"].white
+      }
+    }
+  }
+});
+
+function BackButton() {
+  return react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", {
+    onClick: function onClick() {
+      return Object(_reach_router__WEBPACK_IMPORTED_MODULE_4__["navigate"])(utils_api__WEBPACK_IMPORTED_MODULE_2__["api"].homePage);
+    },
+    className: _styles.back
+  }, react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    "data-name": "Ebene 1",
+    viewBox: "0 0 32 40",
+    x: "0px",
+    y: "0px"
+  }, react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("path", {
+    className: _styles.falconLines,
+    d: "M14.52,19.1a1.25,1.25,0,1,0,1.25-1.25A1.25,1.25,0,0,0,14.52,19.1Zm1.5,0c0,.28-.5.28-.5,0a.25.25,0,1,1,.5,0Z"
+  }), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("path", {
+    className: _styles.falconLines,
+    d: "M15.77,24.53a1.08,1.08,0,1,0,1.08,1.08A1.08,1.08,0,0,0,15.77,24.53Zm-.08,1.08a.08.08,0,1,1,.17,0C15.85,25.71,15.69,25.71,15.69,25.62Z"
+  }), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("path", {
+    className: _styles.falconLines,
+    d: "M13.35,24.17a1.08,1.08,0,1,0,1.08,1.08A1.08,1.08,0,0,0,13.35,24.17Zm-.08,1.08a.08.08,0,0,1,.17,0C13.43,25.34,13.27,25.34,13.27,25.25Z"
+  }), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("path", {
+    className: _styles.falconLines,
+    d: "M17.1,25.25a1.08,1.08,0,1,0,1.08-1.08A1.08,1.08,0,0,0,17.1,25.25Zm1,0a.08.08,0,0,1,.17,0C18.27,25.34,18.1,25.34,18.1,25.25Z"
+  }), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("path", {
+    className: _styles.falconLines,
+    d: "M15.77,26.92A1.08,1.08,0,1,0,16.85,28,1.08,1.08,0,0,0,15.77,26.92ZM15.69,28a.08.08,0,0,1,.17,0C15.85,28.09,15.69,28.09,15.69,28Z"
+  }), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("path", {
+    className: _styles.falconLines,
+    d: "M12.85,26.56a1.08,1.08,0,1,0,1.08,1.08A1.08,1.08,0,0,0,12.85,26.56Zm-.08,1.08a.08.08,0,0,1,.17,0C12.94,27.73,12.77,27.73,12.77,27.64Z"
+  }), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("path", {
+    className: _styles.falconLines,
+    d: "M17.6,27.64a1.08,1.08,0,1,0,1.08-1.08A1.08,1.08,0,0,0,17.6,27.64Zm1,0a.08.08,0,0,1,.17,0C18.77,27.73,18.6,27.73,18.6,27.64Z"
+  }), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("path", {
+    className: _styles.falconLines,
+    d: "M26.72,9.51a.5.5,0,0,0-.46-.31h-.87a.5.5,0,0,0-.47.33l-.41,1.17a.51.51,0,0,0,0,.17v.8L20,1.14a.5.5,0,0,0-.46-.31H16.93a.5.5,0,0,0-.5.5v3.8H15.1V1.33a.5.5,0,0,0-.5-.5H12a.5.5,0,0,0-.46.31L5.23,16h0a.48.48,0,0,0,0,.1.52.52,0,0,0,0,.09.49.49,0,0,0,0,.13.48.48,0,0,0,0,.07.5.5,0,0,0,.09.14l0,0a.48.48,0,0,0,.11.08l1.79.79h-2a.5.5,0,0,0-.5.5v2.33a.5.5,0,0,0,.5.5H7.42l-1.92.79a.5.5,0,0,0-.29.6A11,11,0,0,0,8.15,27l-.38.44a.5.5,0,0,0,0,.7,13.29,13.29,0,0,0,7.94,3,12.73,12.73,0,0,0,7.72-2.84.5.5,0,0,0,.06-.69l-.36-.46a10.94,10.94,0,0,0,3.15-5,.5.5,0,0,0-.27-.59l-1.72-.79h1.92a.5.5,0,0,0,.5-.5V17.94a.5.5,0,0,0-.5-.5H24.2L26,16.65a.5.5,0,0,0,.26-.65c-.11-.27-.24-.52-.36-.78l1-.42a.5.5,0,0,0,.3-.46V10.86a.5.5,0,0,0,0-.19Zm-1,.68h.18l.3.76v.36h-.75v-.37ZM16.93,17h0a2.39,2.39,0,1,1-1.18-.32,2.4,2.4,0,0,1,1.18.32Zm6.49,1.42v1.33H19.11a3.32,3.32,0,0,0,0-1.33Zm-5,2.79a3.4,3.4,0,0,0,.31-.46h2.69A5.91,5.91,0,0,1,20,23.2Zm-6.94,1.9a5.83,5.83,0,0,1-1.35-2.36h2.69a3.39,3.39,0,0,0,.3.45ZM6.35,15.92c1.57-3.58,4-5.81,7.11-6.53l-.31,3.33a6.93,6.93,0,0,0-4,4.44L6.34,15.93Zm8.42-9.79h2l.78,8.32H14Zm3.63,6.59-.31-3.35a8.64,8.64,0,0,1,3.17,1.41L19.17,13.1A6.84,6.84,0,0,0,18.39,12.72Zm-7.45,3,1.91,1.64,0,.08h-2.7A5.89,5.89,0,0,1,10.94,15.71Zm1.48,2.73a3.32,3.32,0,0,0,0,1.33H8.11V18.44Zm3.35-2.75a3.39,3.39,0,0,0-2.28.89l-1.9-1.63A5.9,5.9,0,0,1,13,13.87l-.1,1a.5.5,0,0,0,.5.55h4.66L17,15.92A3.38,3.38,0,0,0,15.77,15.69Zm2.7-.4a.5.5,0,0,0,.13-.38l-.1-1a5.93,5.93,0,0,1,1.27.9l-1.33.55Zm2.29-.94a6.9,6.9,0,0,0-.76-.68l2-2.25a11,11,0,0,1,1.57,1.76ZM19.22,1.83l3.92,9.27A9.84,9.84,0,0,0,18,8.33l-.26-2.75a.5.5,0,0,0-.29-.4V1.83Zm-6.91,0H14.1V5.18a.5.5,0,0,0-.29.4l-.26,2.76a10,10,0,0,0-5.17,2.77ZM5.78,18.44H7.11v1.33H5.78Zm.53,3.87,2.86-1.17a6.86,6.86,0,0,0,1.65,2.76l-2,2.34A10,10,0,0,1,6.31,22.3Zm9.45,7.86a12.25,12.25,0,0,1-6.89-2.48l5-5.78a3.39,3.39,0,0,0,3.85,0l4.76,5.95A11.8,11.8,0,0,1,15.76,30.17Zm6.79-3.77L20.62,24a6.94,6.94,0,0,0,1.79-3l2.82,1.31A10,10,0,0,1,22.55,26.4Zm3.2-6.64H24.42V18.44h1.33Zm-.57-3.84-3.33,1.42a.49.49,0,0,0-.13.09h-.89L25,15.61ZM18.65,17.3a3.41,3.41,0,0,0-.63-.74l7.14-3a.5.5,0,0,0,.31-.46v-.83h.75V14Z"
+  }), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("circle", {
+    className: _styles.falconLines,
+    cx: "12.83",
+    cy: "4.3",
+    r: "0.58"
+  }), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("path", {
+    className: _styles.falconLines,
+    d: "M12,8a1.08,1.08,0,1,0-1.08-1.08A1.08,1.08,0,0,0,12,8Zm0-1.17a.08.08,0,0,1,.08.08c0,.09-.17.09-.17,0A.08.08,0,0,1,12,6.83Z"
+  }), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("circle", {
+    className: _styles.falconLines,
+    cx: "18.67",
+    cy: "4.3",
+    r: "0.58"
+  }), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("path", {
+    className: _styles.falconLines,
+    d: "M18.43,6.92a1.08,1.08,0,1,0,1.08-1.08A1.08,1.08,0,0,0,18.43,6.92Zm1.08-.08a.08.08,0,0,1,.08.08c0,.09-.17.09-.17,0A.08.08,0,0,1,19.51,6.83Z"
+  })));
+}
+
+/***/ }),
+
+/***/ 72:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoadingPulse", function() { return LoadingPulse; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(10);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var typestyle__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(22);
+/* harmony import */ var utils_values__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(44);
+
+
+ // pure css implementation of pulse gif, this block is taken from https://loading.io/css/
+
+Object(typestyle__WEBPACK_IMPORTED_MODULE_1__["cssRaw"])("\n  .lds-facebook {\n    display: inline-block;\n    position: relative;\n    width: 64px;\n    height: 64px;\n  }\n  .lds-facebook div {\n    display: inline-block;\n    position: absolute;\n    border-radius: 3px;\n    left: 6px;\n    width: 8px;\n    background: ".concat(utils_values__WEBPACK_IMPORTED_MODULE_2__["colors"].white, ";\n    animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;\n  }\n  .lds-facebook div:nth-child(1) {\n    left: 6px;\n    animation-delay: -0.24s;\n  }\n  .lds-facebook div:nth-child(2) {\n    left: 26px;\n    animation-delay: -0.12s;\n  }\n  .lds-facebook div:nth-child(3) {\n    left: 45px;\n    animation-delay: 0;\n  }\n  @keyframes lds-facebook {\n    0% {\n      top: 6px;\n      height: 51px;\n    }\n    50%, 100% {\n      top: 19px;\n      height: 26px;\n    }\n  }\n"));
+
+var _styles = Object(typestyle__WEBPACK_IMPORTED_MODULE_1__["stylesheet"])({
+  wrapper: {
+    display: "inline-flex",
+    width: "64px",
+    height: "40px",
+    marginTop: "-7px"
+  }
+});
+
+function LoadingPulse(_ref) {
+  var condition = _ref.condition;
+  return condition ? react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", {
+    className: _styles.wrapper
+  }, react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", {
+    className: "lds-facebook"
+  }, react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", null), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", null), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", null))) : false;
+}
+
+/***/ }),
+
+/***/ 73:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_styles", function() { return _styles; });
-/* harmony import */ var _babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(394);
+/* harmony import */ var _babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(64);
 /* harmony import */ var _babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var typestyle__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(353);
-/* harmony import */ var utils_values__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(375);
+/* harmony import */ var typestyle__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(22);
+/* harmony import */ var utils_values__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(44);
 
 
 
@@ -1020,292 +1325,21 @@ var _styles = _babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_0___d
 
 /***/ }),
 
-/***/ 396:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Loading", function() { return Loading; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(342);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var typestyle__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(353);
-/* harmony import */ var utils_values__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(375);
-
-
- // pure css implementation of lightsaber gif
-// this block is taken from https://codepen.io/ncerminara/pen/KzurJ?editors=1100
-// and modified to be animated
-
-Object(typestyle__WEBPACK_IMPORTED_MODULE_1__["cssRaw"])("\n\t.lightsaber { \n\t\tposition: relative;\n\t\theight: 270px;\n\t}\n\n\t.lightsaber label {\n\t\tcursor: pointer;\n\t\tposition: absolute;\n\t\tbottom: 0;\n\t\tleft: 0;\n\t\tz-index: 88;\n\t\ttext-indent: -9999px;\n\t\twidth: 15px;\n\t\theight: 50px;\n\t\tborder-bottom: solid 4px grey;\n\t\tborder-top: solid 5px grey;\n\t\tborder-radius: 5px;\n\t\t-moz-border-radius: 5px;\n\t\t-webkit-border-radius: 5px;\n\t\t-o-border-radius: 5px;\n\t\t-ms-border-radius: 5px;\n\t\tbackground: rgb(226,226,226); /* Old browsers */\n\t\tbackground: linear-gradient(to right, rgba(226,226,226,1) 0%,rgba(219,219,219,1) 50%,rgba(209,209,209,1) 51%,rgba(254,254,254,1) 100%); /* W3C */\n\t\tbackground: -moz-linear-gradient(left, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 50%, rgba(209,209,209,1) 51%, rgba(254,254,254,1) 100%); /* FF3.6+ */\n\t\tbackground: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(226,226,226,1)), color-stop(50%,rgba(219,219,219,1)), color-stop(51%,rgba(209,209,209,1)), color-stop(100%,rgba(254,254,254,1))); /* Chrome,Safari4+ */\n\t\tbackground: -webkit-linear-gradient(left, rgba(226,226,226,1) 0%,rgba(219,219,219,1) 50%,rgba(209,209,209,1) 51%,rgba(254,254,254,1) 100%); /* Chrome10+,Safari5.1+ */\n\t\tbackground: -o-linear-gradient(left, rgba(226,226,226,1) 0%,rgba(219,219,219,1) 50%,rgba(209,209,209,1) 51%,rgba(254,254,254,1) 100%); /* Opera 11.10+ */\n\t\tbackground: -ms-linear-gradient(left, rgba(226,226,226,1) 0%,rgba(219,219,219,1) 50%,rgba(209,209,209,1) 51%,rgba(254,254,254,1) 100%); /* IE10+ */\n\t\tfilter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', endColorstr='#fefefe',GradientType=1 ); /* IE6-9 */\n\t}\n\n\t.lightsaber .switch {\n\t\tbackground: #B94A37;\n\t\twidth: 5px;\n\t\theight: 10px;\n\t\tdisplay: block;\n\t\tposition: absolute;\n\t\tbottom: 25px;\n\t\tleft: 13px;\n\t\ttransition: left 200ms;\n\t\t-moz-transition: left 200ms;\n\t\t-webkit-transition: left 200ms;\n\t\t-o-transition: left 200ms;\n\t\t-ms-transition: left 200ms;\n\t\tborder-radius: 10px;\n\t\t-moz-border-radius: 10px;\n\t\t-webkit-border-radius: 10px;\n\t\t-o-border-radius: 10px;\n\t\t-ms-border-radius: 10px;\n\t}\n\n\t.lightsaber input[type=checkbox] {\n\t\tposition: absolute;\n\t\tbottom: 0;\n\t\tleft: 0;\n\t\topacity: 0;\n\t\t-moz-opacity: 0;\n\t\t-webkit-opacity: 0;\n\t\t-o-opacity: 0;\n\t\t-ms-opacity: 0;\n\t\tz-index: 77;\n\t}\n\n\t.lightsaber .plasma {\n\t\ttransition: height 300ms,;\n\t\t-moz-transition: height 300ms;\n\t\t-webkit-transition: height 300ms;\n\t\t-o-transition: height 300ms;\n\t\t-ms-transition: height 300ms;\n\t\tborder-radius: 12px 12px 0 0;\n\t\tposition: absolute;\n\t\tbottom: 55px;\n\t\tleft: 2px;\n\t\twidth: 10px;\n\t\tdisplay: block;\n\t\tfilter: blur(1px);\n\t\t-moz-filter: blur(1px);\n\t\t-webkit-filter: blur(1px);\n\t\t-o-filter: blur(1px);\n\t\t-ms-filter: blur(1px);\n\t\theight: 0;\n\t}\n\n\n\t.lightsaber input[type=checkbox]:checked ~ div.plasma {\n\t\theight: 250px;\n\t}\n\n\t.lightsaber input[type=checkbox]:hover ~ div.switch {\n\t\tbackground: #c09853;\n\t\tleft: 12px;\n\t}\n\n\t.lightsaber input[type=checkbox]:checked ~ div.switch {\n\t\tbackground: #468847;\n\t}\n\n\t.yoda {\n\t\tbackground: rgb(135,220,90); /* Old browsers */\n\t\tbackground: linear-gradient(to right, rgb(135,220,90) 0%,rgb(254,254,254) 30%,rgb(254,254,254) 50%,rgb(254,254,254) 70%,rgb(135,220,90) 100%); /* W3C */\n\t\tbackground: -moz-linear-gradient(left, rgb(135,220,90) 0%, rgb(254,254,254) 30%, rgb(254,254,254) 50%, rgb(254,254,254) 70%, rgb(135,220,90) 100%); /* FF3.6+ */\n\t\tbackground: -webkit-gradient(linear, left top, right top, color-stop(0%,rgb(135,220,90)), color-stop(30%,rgb(254,254,254)), color-stop(50%,rgb(254,254,254)), color-stop(70%,rgb(254,254,254)), color-stop(100%,rgb(135,220,90))); /* Chrome,Safari4+ */\n\t\tbackground: -webkit-linear-gradient(left, rgb(135,220,90) 0%,rgb(254,254,254) 30%,rgb(254,254,254) 50%,rgb(254,254,254) 70%,rgb(135,220,90) 100%); /* Chrome10+,Safari5.1+ */\n\t\tbackground: -o-linear-gradient(left, rgb(135,220,90) 0%,rgb(254,254,254) 30%,rgb(254,254,254) 50%,rgb(254,254,254) 70%,rgb(135,220,90) 100%); /* Opera 11.10+ */\n\t\tbackground: -ms-linear-gradient(left, rgb(135,220,90) 0%,rgb(254,254,254) 30%,rgb(254,254,254) 50%,rgb(254,254,254) 70%,rgb(135,220,90) 100%); /* IE10+ */\n\t\tfilter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#87dc5a', endColorstr='#87dc5a',GradientType=1 ); /* IE6-9 */\n\t\tanimation-name: yoda;\n\t\t-moz-animation-name: yoda;\n\t\t-webkit-animation-name: yoda;\n\t\t-o-animation-name: yoda;\n\t\t-ms-animation-name: yoda;\n\t\tanimation-duration: 1.5s;\n\t\t-moz-animation-duration: 1.5s;\n\t\t-webkit-animation-duration: 1.5s;\n\t\t-o-animation-duration: 1.5s;\n\t\t-ms-animation-duration: 1.5s;\n\t\tanimation-iteration-count: infinite;\n\t\t-moz-animation-iteration-count: infinite;\n\t\t-webkit-animation-iteration-count: infinite;\n\t\t-o-animation-iteration-count: infinite;\n\t\t-ms-animation-iteration-count: infinite;\n\t}\n\n\t.vader {\n\t\tbackground: rgb(229,17,21); /* Old browsers */\n\t\tbackground: linear-gradient(to right, rgba(229,17,21,1) 0%,rgba(254,254,254,1) 30%,rgba(254,254,254,1) 47%,rgba(254,254,254,1) 71%,rgba(229,17,21,1) 100%); /* W3C */\n\t\tbackground: -moz-linear-gradient(left, rgba(229,17,21,1) 0%, rgba(254,254,254,1) 30%, rgba(254,254,254,1) 47%, rgba(254,254,254,1) 71%, rgba(229,17,21,1) 100%); /* FF3.6+ */\n\t\tbackground: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(229,17,21,1)), color-stop(30%,rgba(254,254,254,1)), color-stop(47%,rgba(254,254,254,1)), color-stop(71%,rgba(254,254,254,1)), color-stop(100%,rgba(229,17,21,1))); /* Chrome,Safari4+ */\n\t\tbackground: -webkit-linear-gradient(left, rgba(229,17,21,1) 0%,rgba(254,254,254,1) 30%,rgba(254,254,254,1) 47%,rgba(254,254,254,1) 71%,rgba(229,17,21,1) 100%); /* Chrome10+,Safari5.1+ */\n\t\tbackground: -o-linear-gradient(left, rgba(229,17,21,1) 0%,rgba(254,254,254,1) 30%,rgba(254,254,254,1) 47%,rgba(254,254,254,1) 71%,rgba(229,17,21,1) 100%); /* Opera 11.10+ */\n\t\tbackground: -ms-linear-gradient(left, rgba(229,17,21,1) 0%,rgba(254,254,254,1) 30%,rgba(254,254,254,1) 47%,rgba(254,254,254,1) 71%,rgba(229,17,21,1) 100%); /* IE10+ */\n\t\tfilter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e51115', endColorstr='#e51115',GradientType=1 ); /* IE6-9 */\n\t\tanimation-name: vader;\n\t\t-moz-animation-name: vader;\n\t\t-webkit-animation-name: vader;\n\t\t-o-animation-name: vader;\n\t\t-ms-animation-name: vader;\n\t\tanimation-duration: 1.5s;\n\t\t-moz-animation-duration: 1.5s;\n\t\t-webkit-animation-duration: 1.5s;\n\t\t-o-animation-duration: 1.5s;\n\t\t-ms-animation-duration: 1.5s;\n\t\tanimation-iteration-count: infinite;\n\t\t-moz-animation-iteration-count: infinite;\n\t\t-webkit-animation-iteration-count: infinite;\n\t\t-o-animation-iteration-count: infinite;\n\t\t-ms-animation-iteration-count: infinite;\n\t}\n\n\t.windu {\n\t\tbackground: rgb(202,116,221); /* Old browsers */\n\t\tbackground: linear-gradient(to right, rgba(202,116,221,1) 0%,rgba(254,254,254,1) 30%,rgba(254,254,254,1) 47%,rgba(254,254,254,1) 71%,rgba(202,116,221,1) 100%); /* W3C */\n\t\tbackground: -moz-linear-gradient(left, rgba(202,116,221,1) 0%, rgba(254,254,254,1) 30%, rgba(254,254,254,1) 47%, rgba(254,254,254,1) 71%, rgba(202,116,221,1) 100%); /* FF3.6+ */\n\t\tbackground: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(202,116,221,1)), color-stop(30%,rgba(254,254,254,1)), color-stop(47%,rgba(254,254,254,1)), color-stop(71%,rgba(254,254,254,1)), color-stop(100%,rgba(202,116,221,1))); /* Chrome,Safari4+ */\n\t\tbackground: -webkit-linear-gradient(left, rgba(202,116,221,1) 0%,rgba(254,254,254,1) 30%,rgba(254,254,254,1) 47%,rgba(254,254,254,1) 71%,rgba(202,116,221,1) 100%); /* Chrome10+,Safari5.1+ */\n\t\tbackground: -o-linear-gradient(left, rgba(202,116,221,1) 0%,rgba(254,254,254,1) 30%,rgba(254,254,254,1) 47%,rgba(254,254,254,1) 71%,rgba(202,116,221,1) 100%); /* Opera 11.10+ */\n\t\tbackground: -ms-linear-gradient(left, rgba(202,116,221,1) 0%,rgba(254,254,254,1) 30%,rgba(254,254,254,1) 47%,rgba(254,254,254,1) 71%,rgba(202,116,221,1) 100%); /* IE10+ */\n\t\tfilter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ca74dd', endColorstr='#ca74dd',GradientType=1 ); /* IE6-9 */\n\t\tanimation-name: windu;\n\t\t-moz-animation-name: windu;\n\t\t-webkit-animation-name: windu;\n\t\t-o-animation-name: windu;\n\t\t-ms-animation-name: windu;\n\t\tanimation-duration: 1.5s;\n\t\t-moz-animation-duration: 1.5s;\n\t\t-webkit-animation-duration: 1.5s;\n\t\t-o-animation-duration: 1.5s;\n\t\t-ms-animation-duration: 1.5s;\n\t\tanimation-iteration-count: infinite;\n\t\t-moz-animation-iteration-count: infinite;\n\t\t-webkit-animation-iteration-count: infinite;\n\t\t-o-animation-iteration-count: infinite;\n\t\t-ms-animation-iteration-count: infinite;\n\t}\n\n\t.obi-wan {\n\t\tbackground: rgb(55,132,214); /* Old browsers */\n\t\tbackground: linear-gradient(to right, rgba(55,132,214,1) 0%,rgba(254,254,254,1) 30%,rgba(254,254,254,1) 47%,rgba(254,254,254,1) 71%,rgba(55,132,214,1) 100%); /* W3C */\n\t\tbackground: -moz-linear-gradient(left, rgba(55,132,214,1) 0%, rgba(254,254,254,1) 30%, rgba(254,254,254,1) 47%, rgba(254,254,254,1) 71%, rgba(55,132,214,1) 100%); /* FF3.6+ */\n\t\tbackground: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(55,132,214,1)), color-stop(30%,rgba(254,254,254,1)), color-stop(47%,rgba(254,254,254,1)), color-stop(71%,rgba(254,254,254,1)), color-stop(100%,rgba(55,132,214,1))); /* Chrome,Safari4+ */\n\t\tbackground: -webkit-linear-gradient(left, rgba(55,132,214,1) 0%,rgba(254,254,254,1) 30%,rgba(254,254,254,1) 47%,rgba(254,254,254,1) 71%,rgba(55,132,214,1) 100%); /* Chrome10+,Safari5.1+ */\n\t\tbackground: -o-linear-gradient(left, rgba(55,132,214,1) 0%,rgba(254,254,254,1) 30%,rgba(254,254,254,1) 47%,rgba(254,254,254,1) 71%,rgba(55,132,214,1) 100%); /* Opera 11.10+ */\n\t\tbackground: -ms-linear-gradient(left, rgba(55,132,214,1) 0%,rgba(254,254,254,1) 30%,rgba(254,254,254,1) 47%,rgba(254,254,254,1) 71%,rgba(55,132,214,1) 100%); /* IE10+ */\n\t\tfilter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3784d6', endColorstr='#3784d6',GradientType=1 ); /* IE6-9 */\n\t\tanimation-name: obi-wan;\n\t\t-moz-animation-name: obi-wan;\n\t\t-webkit-animation-name: obi-wan;\n\t\t-o-animation-name: obi-wan;\n\t\t-ms-animation-name: obi-wan;\n\t\tanimation-duration: 1.5s;\n\t\t-moz-animation-duration: 1.5s;\n\t\t-webkit-animation-duration: 1.5s;\n\t\t-o-animation-duration: 1.5s;\n\t\t-ms-animation-duration: 1.5s;\n\t\tanimation-iteration-count: infinite;\n\t\t-moz-animation-iteration-count: infinite;\n\t\t-webkit-animation-iteration-count: infinite;\n\t\t-o-animation-iteration-count: infinite;\n\t\t-ms-animation-iteration-count: infinite;\n\t}\n\n\tdiv {\n\t\t-webkit-transform : translateZ(0); \n\t\t-o-transform : translateZ(0); \n\t\t-moz-transform : translateZ(0); \n\t\ttransform : translateZ(0); \n\t}\n\n\t/* Animations */\n\t@keyframes yoda {\n\t\tfrom { box-shadow: 0 0 0px #7EC855;  height: 0px; }\n\t\t50% { box-shadow: 0 0 25px #7EC855; height: 270px; }\n\t\tto { box-shadow: 0 0 0px #7EC855;  height: 0px; }\n\t}\n\t@-moz-keyframes yoda {\n\t\tfrom { box-shadow: 0 0 0px #7EC855;  height: 0px; }\n\t\t50% { box-shadow: 0 0 25px #7EC855; height: 270px; }\n\t\tto { box-shadow: 0 0 0px #7EC855;  height: 0px; }\n\t}\n\t@-webkit-keyframes yoda {\n\t\tfrom { box-shadow: 0 0 0px #7EC855;  height: 0px; }\n\t\t50% { box-shadow: 0 0 25px #7EC855; height: 270px; }\n\t\tto { box-shadow: 0 0 0px #7EC855;  height: 0px; }\n\t}\n\t@-o-keyframes yoda {\n\t\tfrom { box-shadow: 0 0 0px #7EC855;  height: 0px; }\n\t\t50% { box-shadow: 0 0 25px #7EC855; height: 270px; }\n\t\tto { box-shadow: 0 0 0px #7EC855;  height: 0px; }\n\t}\n\t@-ms-keyframes yoda {\n\t\tfrom { box-shadow: 0 0 0px #7EC855;  height: 0px; }\n\t\t50% { box-shadow: 0 0 25px #7EC855; height: 270px; }\n\t\tto { box-shadow: 0 0 0px #7EC855;  height: 0px; }\n\t}\n\n\t@keyframes vader {\n\t\tfrom { box-shadow: 0 0 0px #e51115; height: 0; }\n\t\t50% { box-shadow: 0 0 25px #e51115; height: 270; }\n\t\tto { box-shadow: 0 0 0px #e51115; height: 0; }\n\t}\n\t@-moz-keyframes vader {\n\t\tfrom { box-shadow: 0 0 0px #e51115; height: 0; }\n\t\t50% { box-shadow: 0 0 25px #e51115; height: 270; }\n\t\tto { box-shadow: 0 0 0px #e51115; height: 0; }\n\t}\n\t@-webkit-keyframes vader {\n\t\tfrom { box-shadow: 0 0 0px #e51115; height: 0; }\n\t\t50% { box-shadow: 0 0 25px #e51115; height: 270; }\n\t\tto { box-shadow: 0 0 0px #e51115; height: 0; }\n\t}\n\t@-o-keyframes vader {\n\t\tfrom { box-shadow: 0 0 0px #e51115; height: 0; }\n\t\t50% { box-shadow: 0 0 25px #e51115; height: 270; }\n\t\tto { box-shadow: 0 0 0px #e51115; height: 0; }\n\t}\n\t@-ms-keyframes vader {\n\t\tfrom { box-shadow: 0 0 0px #e51115; height: 0; }\n\t\t50% { box-shadow: 0 0 25px #e51115; height: 270; }\n\t\tto { box-shadow: 0 0 0px #e51115; height: 0; }\n\t}\n\n\t@keyframes windu {\n\t\tfrom { box-shadow: 0 0 0px #ca74dd; height: 0px; }\n\t\t50% { box-shadow: 0 0 25px #ca74dd; height: 270; }\n\t\tto { box-shadow: 0 0 0px #ca74dd; height: 0px; }\n\t}\n\t@-moz-keyframes windu {\n\t\tfrom { box-shadow: 0 0 0px #ca74dd; height: 0px; }\n\t\t50% { box-shadow: 0 0 25px #ca74dd; height: 270; }\n\t\tto { box-shadow: 0 0 0px #ca74dd; height: 0px; }\n\t}\n\t@-webkit-keyframes windu {\n\t\tfrom { box-shadow: 0 0 0px #ca74dd; height: 0px; }\n\t\t50% { box-shadow: 0 0 25px #ca74dd; height: 270; }\n\t\tto { box-shadow: 0 0 0px #ca74dd; height: 0px; }\n\t}\n\t@-o-keyframes windu {\n\t\tfrom { box-shadow: 0 0 0px #ca74dd; height: 0px; }\n\t\t50% { box-shadow: 0 0 25px #ca74dd; height: 270; }\n\t\tto { box-shadow: 0 0 0px #ca74dd; height: 0px; }\n\t}\n\t@-ms-keyframes windu {\n\t\tfrom { box-shadow: 0 0 0px #ca74dd; height: 0px; }\n\t\t50% { box-shadow: 0 0 25px #ca74dd; height: 270; }\n\t\tto { box-shadow: 0 0 0px #ca74dd; height: 0px; }\n\t}\n\n\t@keyframes obi-wan {\n\t\tfrom { box-shadow: 0 0 0px #3784d6; height: 0px; }\n\t\t50% { box-shadow: 0 0 25px #3784d6; height: 270; }\n\t\tto { box-shadow: 0 0 0px #3784d6; height: 0px; }\n\t}\n\t@-moz-keyframes obi-wan {\n\t\tfrom { box-shadow: 0 0 0px #3784d6; height: 0px; }\n\t\t50% { box-shadow: 0 0 25px #3784d6; height: 270; }\n\t\tto { box-shadow: 0 0 0px #3784d6; height: 0px; }\n\t}\n\t@-webkit-keyframes obi-wan {\n\t\tfrom { box-shadow: 0 0 0px #3784d6; height: 0px; }\n\t\t50% { box-shadow: 0 0 25px #3784d6; height: 270; }\n\t\tto { box-shadow: 0 0 0px #3784d6; height: 0px; }\n\t}\n\t@-o-keyframes obi-wan {\n\t\tfrom { box-shadow: 0 0 0px #3784d6; height: 0px; }\n\t\t50% { box-shadow: 0 0 25px #3784d6; height: 270; }\n\t\tto { box-shadow: 0 0 0px #3784d6; height: 0px; }\n\t}\n\t@-ms-keyframes obi-wan {\n\t\tfrom { box-shadow: 0 0 0px #3784d6; height: 0px; }\n\t\t50% { box-shadow: 0 0 25px #3784d6; height: 270; }\n\t\tto { box-shadow: 0 0 0px #3784d6; height: 0px; }\n\t}\n\n");
-
-var _styles = Object(typestyle__WEBPACK_IMPORTED_MODULE_1__["stylesheet"])({
-  wrapper: {
-    left: "0px",
-    top: "0px",
-    height: "100vh",
-    width: "100%",
-    position: "fixed",
-    background: utils_values__WEBPACK_IMPORTED_MODULE_2__["colors"].dark,
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center"
-  }
-});
-
-function Loading(_ref) {
-  var condition = _ref.condition;
-  var plasmas = ["yoda", "obi-wan", "vader", "windu"];
-  var random = plasmas[Math.floor(Math.random() * plasmas.length)];
-  return condition && react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", {
-    className: _styles.wrapper
-  }, react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", {
-    className: "lightsaber"
-  }, react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("label", null), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("input", {
-    type: "checkbox",
-    defaultChecked: true
-  }), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", {
-    className: "switch"
-  }), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", {
-    className: "plasma ".concat(random)
-  })));
-}
-
-/***/ }),
-
-/***/ 397:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Image", function() { return Image; });
-/* harmony import */ var _babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(394);
-/* harmony import */ var _babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(342);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var typestyle__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(353);
-/* harmony import */ var hooks_fetch__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(384);
-/* harmony import */ var utils_api__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(392);
-/* harmony import */ var utils_values__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(375);
-
-
- // helpers
-
- // static values
-
-
-
-
-var _styles = _babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_0___default()({
-  placeholder: function placeholder(isCharacter) {
-    var _s = {
-      display: "flex",
-      justifyContent: "center",
-      flexDirection: "column",
-      color: utils_values__WEBPACK_IMPORTED_MODULE_5__["colors"].gray,
-      background: utils_values__WEBPACK_IMPORTED_MODULE_5__["colors"].dark,
-      height: "152px"
-    };
-
-    if (!isCharacter) {
-      _s = _babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_0___default()({}, _s, {
-        height: "250px"
-      });
-    }
-
-    return Object(typestyle__WEBPACK_IMPORTED_MODULE_2__["style"])(_s);
-  }
-}, Object(typestyle__WEBPACK_IMPORTED_MODULE_2__["stylesheet"])({
-  image: {
-    height: "inherit",
-    width: "100%",
-    borderRadius: "7px",
-    textAlign: "center"
-  },
-  thumb: {
-    background: utils_values__WEBPACK_IMPORTED_MODULE_5__["colors"].charcoal,
-    height: "150px",
-    width: "100px",
-    objectFit: "cover",
-    borderRadius: "5px"
-  }
-}));
-
-function Image(_ref) {
-  var text = _ref.text,
-      isCharacter = _ref.isCharacter;
-
-  // lazy loading images
-  var _url = isCharacter ? utils_api__WEBPACK_IMPORTED_MODULE_4__["api"].character(text) : utils_api__WEBPACK_IMPORTED_MODULE_4__["api"].poster(text);
-
-  var _isSurged = window.location.host.indexOf("surge.sh") > -1;
-
-  var _placeholder = _isSurged ? "(run locally to view images)" : "...";
-
-  var _className = isCharacter ? _styles.thumb : _styles.image;
-
-  var _useFetch = Object(hooks_fetch__WEBPACK_IMPORTED_MODULE_3__["useFetch"])(_url, [text]),
-      data = _useFetch.data,
-      loading = _useFetch.loading;
-
-  if (!loading && data && !_isSurged) {
-    return react__WEBPACK_IMPORTED_MODULE_1__["createElement"]("img", {
-      src: data.value,
-      className: _className
-    });
-  }
-
-  return react__WEBPACK_IMPORTED_MODULE_1__["createElement"]("div", {
-    className: Object(typestyle__WEBPACK_IMPORTED_MODULE_2__["classes"])(_className, _styles.placeholder(isCharacter))
-  }, _placeholder);
-}
-
-/***/ }),
-
-/***/ 398:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BackButton", function() { return BackButton; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(342);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var typestyle_lib_index__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(399);
-/* harmony import */ var typestyle_lib_index__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(typestyle_lib_index__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var utils_api__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(392);
-/* harmony import */ var utils_values__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(375);
-/* harmony import */ var _reach_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(360);
-
-
-
-
-
-
-var _styles = Object(typestyle_lib_index__WEBPACK_IMPORTED_MODULE_1__["stylesheet"])({
-  back: {
-    width: "50px",
-    transform: "rotate(270deg)",
-    margin: "35% auto",
-    cursor: "pointer",
-    paddingTop: "15px"
-  },
-  falconLines: {
-    fill: utils_values__WEBPACK_IMPORTED_MODULE_3__["colors"].pale,
-    $nest: {
-      "&:hover": {
-        fill: utils_values__WEBPACK_IMPORTED_MODULE_3__["colors"].white
-      }
-    }
-  }
-});
-
-function BackButton() {
-  return react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", {
-    onClick: function onClick() {
-      return Object(_reach_router__WEBPACK_IMPORTED_MODULE_4__["navigate"])(utils_api__WEBPACK_IMPORTED_MODULE_2__["api"].homePage);
-    },
-    className: _styles.back
-  }, react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("svg", {
-    xmlns: "http://www.w3.org/2000/svg",
-    "data-name": "Ebene 1",
-    viewBox: "0 0 32 40",
-    x: "0px",
-    y: "0px"
-  }, react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("path", {
-    className: _styles.falconLines,
-    d: "M14.52,19.1a1.25,1.25,0,1,0,1.25-1.25A1.25,1.25,0,0,0,14.52,19.1Zm1.5,0c0,.28-.5.28-.5,0a.25.25,0,1,1,.5,0Z"
-  }), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("path", {
-    className: _styles.falconLines,
-    d: "M15.77,24.53a1.08,1.08,0,1,0,1.08,1.08A1.08,1.08,0,0,0,15.77,24.53Zm-.08,1.08a.08.08,0,1,1,.17,0C15.85,25.71,15.69,25.71,15.69,25.62Z"
-  }), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("path", {
-    className: _styles.falconLines,
-    d: "M13.35,24.17a1.08,1.08,0,1,0,1.08,1.08A1.08,1.08,0,0,0,13.35,24.17Zm-.08,1.08a.08.08,0,0,1,.17,0C13.43,25.34,13.27,25.34,13.27,25.25Z"
-  }), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("path", {
-    className: _styles.falconLines,
-    d: "M17.1,25.25a1.08,1.08,0,1,0,1.08-1.08A1.08,1.08,0,0,0,17.1,25.25Zm1,0a.08.08,0,0,1,.17,0C18.27,25.34,18.1,25.34,18.1,25.25Z"
-  }), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("path", {
-    className: _styles.falconLines,
-    d: "M15.77,26.92A1.08,1.08,0,1,0,16.85,28,1.08,1.08,0,0,0,15.77,26.92ZM15.69,28a.08.08,0,0,1,.17,0C15.85,28.09,15.69,28.09,15.69,28Z"
-  }), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("path", {
-    className: _styles.falconLines,
-    d: "M12.85,26.56a1.08,1.08,0,1,0,1.08,1.08A1.08,1.08,0,0,0,12.85,26.56Zm-.08,1.08a.08.08,0,0,1,.17,0C12.94,27.73,12.77,27.73,12.77,27.64Z"
-  }), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("path", {
-    className: _styles.falconLines,
-    d: "M17.6,27.64a1.08,1.08,0,1,0,1.08-1.08A1.08,1.08,0,0,0,17.6,27.64Zm1,0a.08.08,0,0,1,.17,0C18.77,27.73,18.6,27.73,18.6,27.64Z"
-  }), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("path", {
-    className: _styles.falconLines,
-    d: "M26.72,9.51a.5.5,0,0,0-.46-.31h-.87a.5.5,0,0,0-.47.33l-.41,1.17a.51.51,0,0,0,0,.17v.8L20,1.14a.5.5,0,0,0-.46-.31H16.93a.5.5,0,0,0-.5.5v3.8H15.1V1.33a.5.5,0,0,0-.5-.5H12a.5.5,0,0,0-.46.31L5.23,16h0a.48.48,0,0,0,0,.1.52.52,0,0,0,0,.09.49.49,0,0,0,0,.13.48.48,0,0,0,0,.07.5.5,0,0,0,.09.14l0,0a.48.48,0,0,0,.11.08l1.79.79h-2a.5.5,0,0,0-.5.5v2.33a.5.5,0,0,0,.5.5H7.42l-1.92.79a.5.5,0,0,0-.29.6A11,11,0,0,0,8.15,27l-.38.44a.5.5,0,0,0,0,.7,13.29,13.29,0,0,0,7.94,3,12.73,12.73,0,0,0,7.72-2.84.5.5,0,0,0,.06-.69l-.36-.46a10.94,10.94,0,0,0,3.15-5,.5.5,0,0,0-.27-.59l-1.72-.79h1.92a.5.5,0,0,0,.5-.5V17.94a.5.5,0,0,0-.5-.5H24.2L26,16.65a.5.5,0,0,0,.26-.65c-.11-.27-.24-.52-.36-.78l1-.42a.5.5,0,0,0,.3-.46V10.86a.5.5,0,0,0,0-.19Zm-1,.68h.18l.3.76v.36h-.75v-.37ZM16.93,17h0a2.39,2.39,0,1,1-1.18-.32,2.4,2.4,0,0,1,1.18.32Zm6.49,1.42v1.33H19.11a3.32,3.32,0,0,0,0-1.33Zm-5,2.79a3.4,3.4,0,0,0,.31-.46h2.69A5.91,5.91,0,0,1,20,23.2Zm-6.94,1.9a5.83,5.83,0,0,1-1.35-2.36h2.69a3.39,3.39,0,0,0,.3.45ZM6.35,15.92c1.57-3.58,4-5.81,7.11-6.53l-.31,3.33a6.93,6.93,0,0,0-4,4.44L6.34,15.93Zm8.42-9.79h2l.78,8.32H14Zm3.63,6.59-.31-3.35a8.64,8.64,0,0,1,3.17,1.41L19.17,13.1A6.84,6.84,0,0,0,18.39,12.72Zm-7.45,3,1.91,1.64,0,.08h-2.7A5.89,5.89,0,0,1,10.94,15.71Zm1.48,2.73a3.32,3.32,0,0,0,0,1.33H8.11V18.44Zm3.35-2.75a3.39,3.39,0,0,0-2.28.89l-1.9-1.63A5.9,5.9,0,0,1,13,13.87l-.1,1a.5.5,0,0,0,.5.55h4.66L17,15.92A3.38,3.38,0,0,0,15.77,15.69Zm2.7-.4a.5.5,0,0,0,.13-.38l-.1-1a5.93,5.93,0,0,1,1.27.9l-1.33.55Zm2.29-.94a6.9,6.9,0,0,0-.76-.68l2-2.25a11,11,0,0,1,1.57,1.76ZM19.22,1.83l3.92,9.27A9.84,9.84,0,0,0,18,8.33l-.26-2.75a.5.5,0,0,0-.29-.4V1.83Zm-6.91,0H14.1V5.18a.5.5,0,0,0-.29.4l-.26,2.76a10,10,0,0,0-5.17,2.77ZM5.78,18.44H7.11v1.33H5.78Zm.53,3.87,2.86-1.17a6.86,6.86,0,0,0,1.65,2.76l-2,2.34A10,10,0,0,1,6.31,22.3Zm9.45,7.86a12.25,12.25,0,0,1-6.89-2.48l5-5.78a3.39,3.39,0,0,0,3.85,0l4.76,5.95A11.8,11.8,0,0,1,15.76,30.17Zm6.79-3.77L20.62,24a6.94,6.94,0,0,0,1.79-3l2.82,1.31A10,10,0,0,1,22.55,26.4Zm3.2-6.64H24.42V18.44h1.33Zm-.57-3.84-3.33,1.42a.49.49,0,0,0-.13.09h-.89L25,15.61ZM18.65,17.3a3.41,3.41,0,0,0-.63-.74l7.14-3a.5.5,0,0,0,.31-.46v-.83h.75V14Z"
-  }), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("circle", {
-    className: _styles.falconLines,
-    cx: "12.83",
-    cy: "4.3",
-    r: "0.58"
-  }), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("path", {
-    className: _styles.falconLines,
-    d: "M12,8a1.08,1.08,0,1,0-1.08-1.08A1.08,1.08,0,0,0,12,8Zm0-1.17a.08.08,0,0,1,.08.08c0,.09-.17.09-.17,0A.08.08,0,0,1,12,6.83Z"
-  }), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("circle", {
-    className: _styles.falconLines,
-    cx: "18.67",
-    cy: "4.3",
-    r: "0.58"
-  }), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("path", {
-    className: _styles.falconLines,
-    d: "M18.43,6.92a1.08,1.08,0,1,0,1.08-1.08A1.08,1.08,0,0,0,18.43,6.92Zm1.08-.08a.08.08,0,0,1,.08.08c0,.09-.17.09-.17,0A.08.08,0,0,1,19.51,6.83Z"
-  })));
-}
-
-/***/ }),
-
-/***/ 404:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Loading", function() { return Loading; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(342);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var typestyle__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(353);
-/* harmony import */ var utils_values__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(375);
-
-
- // pure css implementation of pulse gif, this block is taken from https://loading.io/css/
-
-Object(typestyle__WEBPACK_IMPORTED_MODULE_1__["cssRaw"])("\n  .lds-facebook {\n    display: inline-block;\n    position: relative;\n    width: 64px;\n    height: 64px;\n  }\n  .lds-facebook div {\n    display: inline-block;\n    position: absolute;\n    border-radius: 3px;\n    left: 6px;\n    width: 8px;\n    background: ".concat(utils_values__WEBPACK_IMPORTED_MODULE_2__["colors"].white, ";\n    animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;\n  }\n  .lds-facebook div:nth-child(1) {\n    left: 6px;\n    animation-delay: -0.24s;\n  }\n  .lds-facebook div:nth-child(2) {\n    left: 26px;\n    animation-delay: -0.12s;\n  }\n  .lds-facebook div:nth-child(3) {\n    left: 45px;\n    animation-delay: 0;\n  }\n  @keyframes lds-facebook {\n    0% {\n      top: 6px;\n      height: 51px;\n    }\n    50%, 100% {\n      top: 19px;\n      height: 26px;\n    }\n  }\n"));
-
-var _styles = Object(typestyle__WEBPACK_IMPORTED_MODULE_1__["stylesheet"])({
-  wrapper: {
-    display: "inline-flex",
-    width: "64px",
-    height: "40px",
-    marginTop: "-7px"
-  }
-});
-
-function Loading(_ref) {
-  var condition = _ref.condition;
-  return condition ? react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", {
-    className: _styles.wrapper
-  }, react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", {
-    className: "lds-facebook"
-  }, react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", null), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", null), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", null))) : false;
-}
-
-/***/ }),
-
-/***/ 405:
+/***/ 74:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Home", function() { return Home; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(342);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(10);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var hooks_fetch__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(384);
-/* harmony import */ var _reach_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(360);
-/* harmony import */ var utils_api__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(392);
-/* harmony import */ var widgets_plasma__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(396);
-/* harmony import */ var widgets_image__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(397);
-/* harmony import */ var styles_home__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(406);
-/* harmony import */ var visuals_wars__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(407);
+/* harmony import */ var hooks_fetch__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(53);
+/* harmony import */ var _reach_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(29);
+/* harmony import */ var utils_api__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(61);
+/* harmony import */ var widgets_plasma__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(62);
+/* harmony import */ var widgets_image__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(63);
+/* harmony import */ var styles_home__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(75);
+/* harmony import */ var visuals_wars__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(76);
  // helpers
 
 
@@ -1340,7 +1374,7 @@ function Home() {
       data = _useFetch.data,
       loading = _useFetch.loading;
 
-  return react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", null, react__WEBPACK_IMPORTED_MODULE_0__["createElement"](widgets_plasma__WEBPACK_IMPORTED_MODULE_4__["Loading"], {
+  return react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", null, react__WEBPACK_IMPORTED_MODULE_0__["createElement"](widgets_plasma__WEBPACK_IMPORTED_MODULE_4__["LoadingSaber"], {
     condition: loading
   }), data && react__WEBPACK_IMPORTED_MODULE_0__["createElement"](react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", {
     className: styles_home__WEBPACK_IMPORTED_MODULE_6__["_styles"].logo
@@ -1356,14 +1390,14 @@ function Home() {
 
 /***/ }),
 
-/***/ 406:
+/***/ 75:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_styles", function() { return _styles; });
-/* harmony import */ var typestyle__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(353);
-/* harmony import */ var utils_values__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(375);
+/* harmony import */ var typestyle__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(22);
+/* harmony import */ var utils_values__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(44);
 
 
 var _styles = Object(typestyle__WEBPACK_IMPORTED_MODULE_0__["stylesheet"])({
@@ -1412,15 +1446,15 @@ var _styles = Object(typestyle__WEBPACK_IMPORTED_MODULE_0__["stylesheet"])({
 
 /***/ }),
 
-/***/ 407:
+/***/ 76:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StarWarsLogo", function() { return StarWarsLogo; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(342);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(10);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var utils_values__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(375);
+/* harmony import */ var utils_values__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(44);
 
 
 var StarWarsLogo = function StarWarsLogo() {
@@ -1449,6 +1483,20 @@ var StarWarsLogo = function StarWarsLogo() {
     d: "M4140 1130 l0 -80 133 0 c86 0 141 5 157 13 30 15 45 54 36 90 -11 46 -50 57 -196 57 l-130 0 0 -80z"
   })));
 };
+
+/***/ }),
+
+/***/ 9:
+/***/ (function(module, exports) {
+
+// fun utility to change favicon on every page load
+(function () {
+  var link = document.querySelector("link[rel*='icon']") || document.createElement('link');
+  link.type = 'image/x-icon';
+  link.rel = 'shortcut icon';
+  link.href = "/favicon-".concat(Math.floor(Math.random() * 9), ".ico");
+  document.getElementsByTagName('head')[0].appendChild(link);
+})();
 
 /***/ })
 

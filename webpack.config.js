@@ -3,7 +3,6 @@ var BUILD_DIR = path.resolve(__dirname, './public');
 var APP_DIR = path.resolve(__dirname, './src');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
-
 const config = {
   entry: {
     main: APP_DIR + '/main.jsx'
@@ -65,6 +64,7 @@ const config = {
     ]
   },
   plugins: [
+    // automatically compiles a index.html in /public/ so we don't have to worry about any templating and html files.
     new HtmlWebpackPlugin({
       title: 'Star Wars',
       filename: 'index.html',

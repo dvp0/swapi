@@ -336,7 +336,7 @@ const _styles = stylesheet({
 	}
 });
 
-export function Loading({ condition }) {
+export function LoadingSaber({ condition }) {
 
 	const plasmas = ["yoda", "obi-wan", "vader", "windu"];
 	const random = plasmas[Math.floor(Math.random() * plasmas.length)];
