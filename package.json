@@ -44,7 +44,7 @@
     "lint": "./node_modules/.bin/eslint src/ --fix",
     "heroku-prebuild": "npm install --dev",
     "heroku-postbuild": "npm run webpack-prod",
-    "start": "node_modules/pm2/bin/pm2 start index.js",
+    "start": "./node_modules/pm2/bin/pm2-runtime start index.js --env production",
     "start-dev": "npm run webpack & node index.js",
     "webpack": "./node_modules/.bin/webpack --mode=none -w",
     "webpack-prod": "./node_modules/.bin/webpack --mode=production",
