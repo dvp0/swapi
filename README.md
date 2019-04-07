@@ -27,7 +27,7 @@ Bundle Splitting - Vendor libs in separate bundle to load synchronously
 To run locally, 
 1) install npm(v6.4.1) and node(v10.15.3)
 2) run `npm install` from the root of this repo
-3) run `npm run start` from the root of this repo
+3) run `npm run start-dev` from the root of this repo
 4) visit `localhost:1138` in browser
 
 # Surged
