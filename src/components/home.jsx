@@ -1,4 +1,5 @@
 import * as React from "react";
+import sortBy from "lodash.sortby";
 
 // helpers
 import { useFetch } from "hooks/fetch";
@@ -32,16 +33,17 @@ function Movie({ movie }) {
 
 export function Home() {
   const { data, loading } = useFetch(api.films);
+  const sortedList = data ? sortBy(data.results, m => m.release_date) : undefined;
   return (
     <div>
       <LoadingSaber condition={loading} />
-      {data &&
+      {!loading && sortedList &&
         <>
           <div className={_styles.logo}>
             <StarWarsLogo />
           </div>
           <div className={_styles.wrapper}>
-            {data.results.map((each, index) =>
+            {sortedList.map((each, index) =>
               <Movie key={index} movie={each} />
             )}
           </div>
