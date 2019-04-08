@@ -1,6 +1,13 @@
 public/200.html
+public/index.html
+public/1.bundle*
+public/bundle*
+
 .DS_Store
 .idea
+
+
+
 # Logs
 logs
 *.log

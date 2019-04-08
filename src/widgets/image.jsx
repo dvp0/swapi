@@ -10,43 +10,43 @@ import { api } from "utils/api";
 import { colors } from "utils/values";
 
 const _styles = {
-	placeholder: (isCharacter) => {
-		let _s = {
-			display: "flex",
-			justifyContent: "center",
-			flexDirection: "column",
-			color: colors.gray,
-			background: colors.charcoal,
-			height: "152px",
-		};
+  placeholder: (isCharacter) => {
+    let _s = {
+      display: "flex",
+      justifyContent: "center",
+      flexDirection: "column",
+      color: colors.gray,
+      background: colors.charcoal,
+      height: "152px",
+    };
 
-		if (!isCharacter) {
-			_s = {
-				..._s,
-				height: "250px",
-				background: colors.dark,
-			};
-		}
-		return style(_s);
-	},
-	...stylesheet({
-		image: {
-			height: "inherit",
-			width: "100%",
-			borderRadius: "7px",
-			textAlign: "center",
-		},
-		thumb: {
-			background: colors.charcoal,
-			height: "150px",
-			width: "100px",
-			objectFit: "cover",
-			borderRadius: "5px",
-		},
-		placeholderText: {
-			padding: "0px 10px",
-		}
-	})
+    if (!isCharacter) {
+      _s = {
+        ..._s,
+        height: "250px",
+        background: colors.dark,
+      };
+    }
+    return style(_s);
+  },
+  ...stylesheet({
+    image: {
+      height: "inherit",
+      width: "100%",
+      borderRadius: "7px",
+      textAlign: "center",
+    },
+    thumb: {
+      background: colors.charcoal,
+      height: "150px",
+      width: "100px",
+      objectFit: "cover",
+      borderRadius: "5px",
+    },
+    placeholderText: {
+      padding: "0px 10px",
+    }
+  })
 };
 
 
@@ -55,24 +55,24 @@ const _styles = {
 
 export function Image({ text, isCharacter }) {
 
-	const _url = isCharacter ? api.character(text) : api.poster(text);
-	const _isSurged = window.location.host.indexOf("surge.sh") > -1;
-	const _placeholder = _isSurged
-		? <a href="https://obi-van.herokuapp.com/">Go to fun version</a>
-		: <LoadingPulse condition={true} color={colors.charcoal}/>;
-	const _className = isCharacter ? _styles.thumb : _styles.image;
+  const _url = isCharacter ? api.character(text) : api.poster(text);
+  const _isSurged = window.location.host.indexOf("surge.sh") > -1;
+  const _placeholder = _isSurged
+    ? <a href="https://obi-van.herokuapp.com/">Go to fun version</a>
+    : <LoadingPulse condition={true} color={colors.charcoal}/>;
+  const _className = isCharacter ? _styles.thumb : _styles.image;
 
-	if (!_isSurged) {
-		const {data, loading} = useFetch(_url, [text]);
-		if (!loading && data && !_isSurged) {
-			return (<img src={data.value} className={_className}/>);
-		}
-	}
+  if (!_isSurged) {
+    const {data, loading} = useFetch(_url, [text]);
+    if (!loading && data && !_isSurged) {
+      return (<img src={data.value} className={_className}/>);
+    }
+  }
 
-	return (
-		<div className={classes(_className, _styles.placeholder(isCharacter))}>
-			<div className={_styles.placeholderText}>{_placeholder}</div>
-		</div>
-	);
+  return (
+    <div className={classes(_className, _styles.placeholder(isCharacter))}>
+      <div className={_styles.placeholderText}>{_placeholder}</div>
+    </div>
+  );
 
 }
