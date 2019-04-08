@@ -14,42 +14,42 @@ import { Home } from "components/home";
 
 // Only generic css needed
 cssRule("html, body", {
-	background: colors.charcoal,
-	margin: "0px",
-	color: colors.white,
+  background: colors.charcoal,
+  margin: "0px",
+  color: colors.white,
 });
 cssRule("a", {
-	color: colors.whiskey,
-	textDecoration: "none",
-	$nest: {
-		"&:visited": {
-			color: colors.whiskey,
-		},
-		"&:hover": {
-			color: colors.amber,
-			textDecoration: "underline",
-		}
-	}
+  color: colors.whiskey,
+  textDecoration: "none",
+  $nest: {
+    "&:visited": {
+      color: colors.whiskey,
+    },
+    "&:hover": {
+      color: colors.amber,
+      textDecoration: "underline",
+    }
+  }
 });
 
 // Using classic React.Component as hooks doesn't have proper
 // support for error boundry yet
 class Wrapper extends React.Component {
-	componentDidCatchError(e) {
-		console.error(e);
-	}
+  componentDidCatchError(e) {
+    console.error(e);
+  }
 
-	render () {
-		return (
-			<Router>
-				<Home path="/" />
-				<Film path="films/:filmId" />
-			</Router>
-		);
-	}
+  render () {
+    return (
+      <Router>
+        <Home path="/" />
+        <Film path="films/:filmId" />
+      </Router>
+    );
+  }
 }
 
 render(
-	<Wrapper/>,
-	document.getElementById("root")
+  <Wrapper/>,
+  document.getElementById("root")
 );

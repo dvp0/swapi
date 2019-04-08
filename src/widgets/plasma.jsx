@@ -323,32 +323,32 @@ cssRaw(`
 `);
 
 const _styles = stylesheet({
-	wrapper: {
-		left: "0px",
-		top: "0px",
-		height: "100vh",
-		width: "100%",
-		position: "fixed",
-		background: colors.dark,
-		display: "flex",
-		alignItems: "center",
-		justifyContent: "center",
-	}
+  wrapper: {
+    left: "0px",
+    top: "0px",
+    height: "100vh",
+    width: "100%",
+    position: "fixed",
+    background: colors.dark,
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+  }
 });
 
 export function LoadingSaber({ condition }) {
 
-	const plasmas = ["yoda", "obi-wan", "vader", "windu"];
-	const random = plasmas[Math.floor(Math.random() * plasmas.length)];
+  const plasmas = ["yoda", "obi-wan", "vader", "windu"];
+  const random = plasmas[Math.floor(Math.random() * plasmas.length)];
 
-	return condition && (
-		<div className={_styles.wrapper}>
-			<div className="lightsaber">
-				<label />
-				<input type="checkbox" defaultChecked />
-				<div className="switch"></div>
-				<div className={`plasma ${random}`}></div>
-			</div>
-		</div>
-	);
+  return condition && (
+    <div className={_styles.wrapper}>
+      <div className="lightsaber">
+        <label />
+        <input type="checkbox" defaultChecked />
+        <div className="switch"></div>
+        <div className={`plasma ${random}`}></div>
+      </div>
+    </div>
+  );
 }
