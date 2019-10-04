@@ -1,3 +1,6 @@
+# Requirements
+https://gist.github.com/dvp0/3311ffecec06c354875e17016b7b0180
+
 # Technologies / Methodologies
 
 Express - Node Http server
